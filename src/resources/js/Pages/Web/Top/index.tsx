@@ -121,11 +121,11 @@ export default function SakebinaTop() {
                     c.animation === 'shake'
                       ? 'shake 0.5s infinite'
                       : c.animation === 'explode'
-                        ? 'explode 1s'
+                        ? 'explode 1s infinite'
                         : c.animation === 'wind'
                           ? 'wind 1s infinite'
                           : c.animation === 'fade'
-                            ? 'fade 2s'
+                            ? 'fade 2s infinite'
                             : 'none',
                 }}
                 onClick={() => setSelectedIndex(i)}
@@ -178,11 +178,11 @@ export default function SakebinaTop() {
                         c.animation === 'shake'
                           ? 'shake 0.5s infinite'
                           : c.animation === 'explode'
-                            ? 'explode 1s'
+                            ? 'explode 1s infinite'
                             : c.animation === 'wind'
                               ? 'wind 1s infinite'
                               : c.animation === 'fade'
-                                ? 'fade 2s'
+                                ? 'fade 2s infinite'
                                 : 'none',
                     }}
                   >
@@ -214,11 +214,11 @@ export default function SakebinaTop() {
                         c.animation === 'shake'
                           ? 'shake 0.5s infinite'
                           : c.animation === 'explode'
-                            ? 'explode 1s'
+                            ? 'explode 1s infinite'
                             : c.animation === 'wind'
                               ? 'wind 1s infinite'
                               : c.animation === 'fade'
-                                ? 'fade 2s'
+                                ? 'fade 2s infinite'
                                 : 'none',
                     }}
                   >
