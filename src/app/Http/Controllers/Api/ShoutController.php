@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Shout;
 use Illuminate\Support\Facades\Validator;
 
@@ -12,7 +11,7 @@ class ShoutController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): \Illuminate\Http\JsonResponse
     {
         // 最新順で20件ずつ返す
         return response()->json(
@@ -23,7 +22,7 @@ class ShoutController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(\Illuminate\Http\Request $request): \Illuminate\Http\JsonResponse
     {
         $validator = Validator::make($request->all(), [
             'text' => 'required|array|max:10',
@@ -43,7 +42,7 @@ class ShoutController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $id): \Illuminate\Http\JsonResponse
     {
         $shout = Shout::findOrFail($id);
         return response()->json($shout);
@@ -52,16 +51,16 @@ class ShoutController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update()
+    public function update(): \Illuminate\Http\JsonResponse
     {
-        //
+        return response()->json(['message' => 'Not implemented'], 501);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy()
+    public function destroy(): \Illuminate\Http\JsonResponse
     {
-        //
+        return response()->json(['message' => 'Not implemented'], 501);
     }
 }
