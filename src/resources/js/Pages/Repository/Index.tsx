@@ -2,7 +2,7 @@ import React from 'react'
 import { Head, Link } from '@inertiajs/react'
 import { Repository } from '@/types'
 import WebLayout from '@/Layouts/WebLayout'
-import { PlusIcon, EyeIcon, LockClosedIcon } from '@heroicons/react/24/outline'
+// import { PlusIcon, EyeIcon, LockClosedIcon } from '@heroicons/react/24/outline'
 
 interface Props {
   repositories: {
@@ -32,7 +32,7 @@ export default function RepositoryIndex({ repositories }: Props) {
             href={route('repositories.create')}
             className="inline-flex items-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white transition duration-150 ease-in-out hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 active:bg-blue-900"
           >
-            <PlusIcon className="mr-2 h-4 w-4" />
+            {/* <PlusIcon className="mr-2 h-4 w-4" /> */}
             新しいリポジトリ
           </Link>
         </div>
@@ -57,9 +57,11 @@ export default function RepositoryIndex({ repositories }: Props) {
                     </Link>
                     <div className="mt-2 flex items-center">
                       {repository.is_public ? (
-                        <EyeIcon className="mr-1 h-4 w-4 text-green-500" />
+                        // <EyeIcon className="mr-1 h-4 w-4 text-green-500" />
+                        <span className="mr-1 h-4 w-4 text-green-500">✓</span>
                       ) : (
-                        <LockClosedIcon className="mr-1 h-4 w-4 text-gray-500" />
+                        // <LockClosedIcon className="mr-1 h-4 w-4 text-gray-500" />
+                        <span className="mr-1 h-4 w-4 text-gray-500">×</span>
                       )}
                       <span className="text-sm text-gray-500">
                         {repository.is_public ? '公開' : '非公開'}
@@ -105,7 +107,8 @@ export default function RepositoryIndex({ repositories }: Props) {
         {repositories.data.length === 0 && (
           <div className="py-12 text-center">
             <div className="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-gray-100">
-              <PlusIcon className="h-12 w-12 text-gray-400" />
+              {/* <PlusIcon className="h-12 w-12 text-gray-400" /> */}
+              <span className="h-12 w-12 text-gray-400">+</span>
             </div>
             <h3 className="mb-2 text-lg font-medium text-gray-900">
               リポジトリがありません
@@ -117,7 +120,7 @@ export default function RepositoryIndex({ repositories }: Props) {
               href={route('repositories.create')}
               className="inline-flex items-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white transition duration-150 ease-in-out hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 active:bg-blue-900"
             >
-              <PlusIcon className="mr-2 h-4 w-4" />
+              {/* <PlusIcon className="mr-2 h-4 w-4" /> */}
               リポジトリを作成
             </Link>
           </div>
@@ -132,8 +135,8 @@ export default function RepositoryIndex({ repositories }: Props) {
                   key={page}
                   href={route('repositories.index', { page })}
                   className={`rounded-md px-3 py-2 text-sm font-medium ${page === repositories.current_page
-                      ? 'bg-blue-600 text-white'
-                      : 'text-gray-500 hover:bg-gray-100 hover:text-gray-700'
+                    ? 'bg-blue-600 text-white'
+                    : 'text-gray-500 hover:bg-gray-100 hover:text-gray-700'
                     }`}
                 >
                   {page}

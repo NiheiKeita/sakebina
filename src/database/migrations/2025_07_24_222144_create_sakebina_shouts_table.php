@@ -11,13 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('repositories', function (Blueprint $table) {
+        Schema::create('sakebina_shouts', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('description')->nullable();
-            $table->boolean('is_public')->default(false);
-            $table->foreignId('owner_id')->constrained('users')->onDelete('cascade');
-            $table->timestamps();
+            $table->json('text'); // 叫びテキスト（1文字ごとに色・アニメーション）
+            $table->timestamps(); // created_at, updated_at
         });
     }
 
@@ -26,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('repositories');
+        Schema::dropIfExists('sakebina_shouts');
     }
 };
