@@ -14,4 +14,7 @@ class Shout extends Model
         'background',
         'animation'
     ];
+    protected $casts = [
+        'text' => 'array',
+    ];
 }

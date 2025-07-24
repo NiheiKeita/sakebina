@@ -26,16 +26,17 @@ class ShoutController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'text' => 'required|string|max:10',
-            'emotion' => 'required|in:怒,哀,喜,恐',
-            'font' => 'required|string|max:32',
-            'background' => 'required|string|max:32',
-            'animation' => 'required|string|max:32',
+            'text' => 'required|array|max:10',
+            'text.*.char' => 'required|string|max:1',
+            'text.*.color' => 'required|string|max:16',
+            'text.*.animation' => 'required|string|max:32',
         ]);
         if ($validator->fails()) {
             return response()->json(['errors' => $validator->errors()], 422);
         }
-        $shout = Shout::create($validator->validated());
+        $shout = Shout::create([
+            'text' => $validator->validated()['text'],
+        ]);
         return response()->json($shout, 201);
     }
 
