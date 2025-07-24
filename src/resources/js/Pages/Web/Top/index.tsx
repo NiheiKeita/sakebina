@@ -37,6 +37,7 @@ export default function SakebinaTop() {
   const [preview, setPreview] = useState(true)
   const [posting, setPosting] = useState(false)
   const [error, setError] = useState('')
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   // タイムライン
   const [shouts, setShouts] = useState<any[]>([])
@@ -74,6 +75,7 @@ export default function SakebinaTop() {
       })
       setInput('')
       setChars([])
+      setIsModalOpen(false)
       fetchShouts()
     } catch (e: any) {
       setError(e?.response?.data?.errors?.text?.[0] || '投稿に失敗しました')
@@ -86,117 +88,17 @@ export default function SakebinaTop() {
     setChars(chars => chars.map((c, i) => i === idx ? { ...c, [key]: value } : c))
   }
 
+  // モーダルの外側クリックで閉じる
+  const handleModalBgClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) setIsModalOpen(false)
+  }
+
   return (
     <WebLayout>
       <Head title="さけびな" />
+      {/* タイムラインのみ常時表示 */}
       <div className="mx-auto max-w-lg py-8">
         <h1 className="mb-4 text-center text-3xl font-bold">さけびな</h1>
-        <form onSubmit={handleSubmit} className="mb-8 rounded bg-white p-4 shadow">
-          <div className="mb-2">
-            <input
-              type="text"
-              maxLength={10}
-              value={input}
-              onChange={e => setInput(e.target.value)}
-              placeholder="叫びたいこと（最大10文字）"
-              className="w-full rounded border px-3 py-2 text-lg"
-              required
-            />
-          </div>
-          <div className="mb-2 flex flex-wrap gap-1">
-            {chars.map((c, i) => (
-              <span
-                key={i}
-                style={{
-                  color: c.color,
-                  border: selectedIndex === i ? '2px solid #333' : '1px solid #ccc',
-                  borderRadius: '4px',
-                  padding: '0.2em 0.4em',
-                  cursor: 'pointer',
-                  background: selectedIndex === i ? '#f0f0f0' : 'transparent',
-                  fontSize: '1.5rem',
-                  marginRight: '2px',
-                  display: 'inline-block',
-                  animation:
-                    c.animation === 'shake'
-                      ? 'shake 0.5s infinite'
-                      : c.animation === 'explode'
-                        ? 'explode 1s infinite'
-                        : c.animation === 'wind'
-                          ? 'wind 1s infinite'
-                          : c.animation === 'fade'
-                            ? 'fade 2s infinite'
-                            : 'none',
-                }}
-                onClick={() => setSelectedIndex(i)}
-              >
-                {c.char}
-              </span>
-            ))}
-          </div>
-          {selectedIndex !== null && chars[selectedIndex] && (
-            <div className="mb-2 flex items-center gap-2">
-              <span>色:</span>
-              <select
-                value={chars[selectedIndex].color}
-                onChange={e => updateChar(selectedIndex, 'color', e.target.value)}
-                className="rounded border px-2 py-1"
-              >
-                {COLORS.map(opt => <option key={opt.value} value={opt.value}>{opt.label}</option>)}
-              </select>
-              <span>アニメ:</span>
-              <select
-                value={chars[selectedIndex].animation}
-                onChange={e => updateChar(selectedIndex, 'animation', e.target.value)}
-                className="rounded border px-2 py-1"
-              >
-                {ANIMATIONS.map(opt => <option key={opt.value} value={opt.value}>{opt.label}</option>)}
-              </select>
-              <button type="button" className="ml-2 text-xs text-gray-500" onClick={() => setSelectedIndex(null)}>閉じる</button>
-            </div>
-          )}
-          <div className="mb-2">
-            <label className="inline-flex items-center">
-              <input type="checkbox" checked={preview} onChange={e => setPreview(e.target.checked)} />
-              <span className="ml-2">リアルタイムプレビュー</span>
-            </label>
-          </div>
-          {preview && (
-            <div className="min-h-[3.5rem] rounded bg-gray-100 p-4 text-center transition-all duration-300">
-              {chars.length === 0 ? (
-                <span className="text-gray-400">ここに叫びが表示されます</span>
-              ) : (
-                chars.map((c, i) => (
-                  <span
-                    key={i}
-                    style={{
-                      color: c.color,
-                      fontSize: '2rem',
-                      marginRight: '2px',
-                      display: 'inline-block',
-                      animation:
-                        c.animation === 'shake'
-                          ? 'shake 0.5s infinite'
-                          : c.animation === 'explode'
-                            ? 'explode 1s infinite'
-                            : c.animation === 'wind'
-                              ? 'wind 1s infinite'
-                              : c.animation === 'fade'
-                                ? 'fade 2s infinite'
-                                : 'none',
-                    }}
-                  >
-                    {c.char}
-                  </span>
-                ))
-              )}
-            </div>
-          )}
-          {error && <div className="mb-2 text-red-500">{error}</div>}
-          <button type="submit" className="w-full rounded bg-blue-600 py-2 font-bold text-white" disabled={posting || chars.length === 0}>
-            {posting ? '投稿中...' : '叫ぶ！'}
-          </button>
-        </form>
         <h2 className="mb-2 text-xl font-bold">みんなの叫び</h2>
         {loading ? <div>読み込み中...</div> : (
           <div className="space-y-4">
@@ -231,12 +133,145 @@ export default function SakebinaTop() {
           </div>
         )}
       </div>
+      {/* 右下のプラスボタン */}
+      <button
+        className="fixed bottom-8 right-8 z-50 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-pink-400 via-red-400 to-yellow-400 text-4xl text-white shadow-lg transition-transform duration-200 hover:scale-110 focus:outline-none"
+        onClick={() => setIsModalOpen(true)}
+        aria-label="叫びを投稿"
+      >
+        ＋
+      </button>
+      {/* 投稿モーダル */}
+      {isModalOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40"
+          onClick={handleModalBgClick}
+        >
+          <div className="animate-fadeIn relative w-full max-w-md rounded-lg bg-white p-6 shadow-xl">
+            <button
+              className="absolute right-2 top-2 text-2xl font-bold text-gray-400 hover:text-gray-700 focus:outline-none"
+              onClick={() => setIsModalOpen(false)}
+              aria-label="閉じる"
+            >
+              ×
+            </button>
+            <form onSubmit={handleSubmit}>
+              <div className="mb-2">
+                <input
+                  type="text"
+                  maxLength={10}
+                  value={input}
+                  onChange={e => setInput(e.target.value)}
+                  placeholder="叫びたいこと（最大10文字）"
+                  className="w-full rounded border px-3 py-2 text-lg"
+                  required
+                />
+              </div>
+              <div className="mb-2 flex flex-wrap gap-1">
+                {chars.map((c, i) => (
+                  <span
+                    key={i}
+                    style={{
+                      color: c.color,
+                      border: selectedIndex === i ? '2px solid #333' : '1px solid #ccc',
+                      borderRadius: '4px',
+                      padding: '0.2em 0.4em',
+                      cursor: 'pointer',
+                      background: selectedIndex === i ? '#f0f0f0' : 'transparent',
+                      fontSize: '1.5rem',
+                      marginRight: '2px',
+                      display: 'inline-block',
+                      animation:
+                        c.animation === 'shake'
+                          ? 'shake 0.5s infinite'
+                          : c.animation === 'explode'
+                            ? 'explode 1s infinite'
+                            : c.animation === 'wind'
+                              ? 'wind 1s infinite'
+                              : c.animation === 'fade'
+                                ? 'fade 2s infinite'
+                                : 'none',
+                    }}
+                    onClick={() => setSelectedIndex(i)}
+                  >
+                    {c.char}
+                  </span>
+                ))}
+              </div>
+              {selectedIndex !== null && chars[selectedIndex] && (
+                <div className="mb-2 flex items-center gap-2">
+                  <span>色:</span>
+                  <select
+                    value={chars[selectedIndex].color}
+                    onChange={e => updateChar(selectedIndex, 'color', e.target.value)}
+                    className="rounded border px-2 py-1"
+                  >
+                    {COLORS.map(opt => <option key={opt.value} value={opt.value}>{opt.label}</option>)}
+                  </select>
+                  <span>アニメ:</span>
+                  <select
+                    value={chars[selectedIndex].animation}
+                    onChange={e => updateChar(selectedIndex, 'animation', e.target.value)}
+                    className="rounded border px-2 py-1"
+                  >
+                    {ANIMATIONS.map(opt => <option key={opt.value} value={opt.value}>{opt.label}</option>)}
+                  </select>
+                  <button type="button" className="ml-2 text-xs text-gray-500" onClick={() => setSelectedIndex(null)}>閉じる</button>
+                </div>
+              )}
+              <div className="mb-2">
+                <label className="inline-flex items-center">
+                  <input type="checkbox" checked={preview} onChange={e => setPreview(e.target.checked)} />
+                  <span className="ml-2">リアルタイムプレビュー</span>
+                </label>
+              </div>
+              {preview && (
+                <div className="min-h-[3.5rem] rounded bg-gray-100 p-4 text-center transition-all duration-300">
+                  {chars.length === 0 ? (
+                    <span className="text-gray-400">ここに叫びが表示されます</span>
+                  ) : (
+                    chars.map((c, i) => (
+                      <span
+                        key={i}
+                        style={{
+                          color: c.color,
+                          fontSize: '2rem',
+                          marginRight: '2px',
+                          display: 'inline-block',
+                          animation:
+                            c.animation === 'shake'
+                              ? 'shake 0.5s infinite'
+                              : c.animation === 'explode'
+                                ? 'explode 1s infinite'
+                                : c.animation === 'wind'
+                                  ? 'wind 1s infinite'
+                                  : c.animation === 'fade'
+                                    ? 'fade 2s infinite'
+                                    : 'none',
+                        }}
+                      >
+                        {c.char}
+                      </span>
+                    ))
+                  )}
+                </div>
+              )}
+              {error && <div className="mb-2 text-red-500">{error}</div>}
+              <button type="submit" className="mt-4 w-full rounded bg-blue-600 py-2 font-bold text-white" disabled={posting || chars.length === 0}>
+                {posting ? '投稿中...' : '叫ぶ！'}
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
       {/* 簡易アニメーション用CSS */}
       <style>{`
         @keyframes shake { 0%{transform:translateX(0);} 25%{transform:translateX(-5px);} 50%{transform:translateX(5px);} 75%{transform:translateX(-5px);} 100%{transform:translateX(0);} }
         @keyframes explode { 0%{transform:scale(1);} 50%{transform:scale(1.3) rotate(10deg);} 100%{transform:scale(0.8) rotate(-10deg);} }
         @keyframes wind { 0%{transform:translateX(0);} 50%{transform:translateX(20px) rotate(5deg);} 100%{transform:translateX(0);} }
         @keyframes fade { 0%{opacity:1;} 100%{opacity:0.2;} }
+        .animate-fadeIn { animation: fadeIn 0.2s; }
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.95);} to { opacity: 1; transform: scale(1);} }
       `}</style>
     </WebLayout>
   )
