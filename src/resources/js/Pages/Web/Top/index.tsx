@@ -17,9 +17,14 @@ const COLORS = [
 const ANIMATIONS = [
   { value: 'none', label: 'なし' },
   { value: 'shake', label: '震える' },
+  { value: 'shake2', label: 'ブルブル' },
   { value: 'explode', label: '爆発' },
   { value: 'wind', label: '風に舞う' },
   { value: 'fade', label: 'フェード' },
+  { value: 'yell', label: '叫ぶ' },
+  { value: 'cry', label: '悲しい' },
+  { value: 'fold', label: '折れる' },
+  { value: 'jump', label: 'ジャンプ' },
 ]
 
 // 1文字の型
@@ -115,13 +120,23 @@ export default function SakebinaTop() {
                       animation:
                         c.animation === 'shake'
                           ? 'shake 0.5s infinite'
-                          : c.animation === 'explode'
-                            ? 'explode 1s infinite'
-                            : c.animation === 'wind'
-                              ? 'wind 1s infinite'
-                              : c.animation === 'fade'
-                                ? 'fade 2s infinite'
-                                : 'none',
+                          : c.animation === 'shake2'
+                            ? 'shake2 0.25s infinite'
+                            : c.animation === 'explode'
+                              ? 'explode 1s infinite'
+                              : c.animation === 'wind'
+                                ? 'wind 1s infinite'
+                                : c.animation === 'fade'
+                                  ? 'fade 2s infinite'
+                                  : c.animation === 'yell'
+                                    ? 'yell 0.7s infinite'
+                                    : c.animation === 'cry'
+                                      ? 'cry 1.2s infinite'
+                                      : c.animation === 'fold'
+                                        ? 'fold 1.2s infinite'
+                                        : c.animation === 'jump'
+                                          ? 'jump 0.7s infinite'
+                                          : 'none',
                     }}
                   >
                     {c.char}
@@ -184,13 +199,23 @@ export default function SakebinaTop() {
                       animation:
                         c.animation === 'shake'
                           ? 'shake 0.5s infinite'
-                          : c.animation === 'explode'
-                            ? 'explode 1s infinite'
-                            : c.animation === 'wind'
-                              ? 'wind 1s infinite'
-                              : c.animation === 'fade'
-                                ? 'fade 2s infinite'
-                                : 'none',
+                          : c.animation === 'shake2'
+                            ? 'shake2 0.25s infinite'
+                            : c.animation === 'explode'
+                              ? 'explode 1s infinite'
+                              : c.animation === 'wind'
+                                ? 'wind 1s infinite'
+                                : c.animation === 'fade'
+                                  ? 'fade 2s infinite'
+                                  : c.animation === 'yell'
+                                    ? 'yell 0.7s infinite'
+                                    : c.animation === 'cry'
+                                      ? 'cry 1.2s infinite'
+                                      : c.animation === 'fold'
+                                        ? 'fold 1.2s infinite'
+                                        : c.animation === 'jump'
+                                          ? 'jump 0.7s infinite'
+                                          : 'none',
                     }}
                     onClick={() => setSelectedIndex(i)}
                   >
@@ -241,13 +266,23 @@ export default function SakebinaTop() {
                           animation:
                             c.animation === 'shake'
                               ? 'shake 0.5s infinite'
-                              : c.animation === 'explode'
-                                ? 'explode 1s infinite'
-                                : c.animation === 'wind'
-                                  ? 'wind 1s infinite'
-                                  : c.animation === 'fade'
-                                    ? 'fade 2s infinite'
-                                    : 'none',
+                              : c.animation === 'shake2'
+                                ? 'shake2 0.25s infinite'
+                                : c.animation === 'explode'
+                                  ? 'explode 1s infinite'
+                                  : c.animation === 'wind'
+                                    ? 'wind 1s infinite'
+                                    : c.animation === 'fade'
+                                      ? 'fade 2s infinite'
+                                      : c.animation === 'yell'
+                                        ? 'yell 0.7s infinite'
+                                        : c.animation === 'cry'
+                                          ? 'cry 1.2s infinite'
+                                          : c.animation === 'fold'
+                                            ? 'fold 1.2s infinite'
+                                            : c.animation === 'jump'
+                                              ? 'jump 0.7s infinite'
+                                              : 'none',
                         }}
                       >
                         {c.char}
@@ -267,9 +302,14 @@ export default function SakebinaTop() {
       {/* 簡易アニメーション用CSS */}
       <style>{`
         @keyframes shake { 0%{transform:translateX(0);} 25%{transform:translateX(-5px);} 50%{transform:translateX(5px);} 75%{transform:translateX(-5px);} 100%{transform:translateX(0);} }
+        @keyframes shake2 { 0%{transform:translateX(0);} 10%{transform:translateX(-8px);} 20%{transform:translateX(8px);} 30%{transform:translateX(-8px);} 40%{transform:translateX(8px);} 50%{transform:translateX(-8px);} 60%{transform:translateX(8px);} 70%{transform:translateX(-8px);} 80%{transform:translateX(8px);} 90%{transform:translateX(-8px);} 100%{transform:translateX(0);} }
         @keyframes explode { 0%{transform:scale(1);} 50%{transform:scale(1.3) rotate(10deg);} 100%{transform:scale(0.8) rotate(-10deg);} }
         @keyframes wind { 0%{transform:translateX(0);} 50%{transform:translateX(20px) rotate(5deg);} 100%{transform:translateX(0);} }
         @keyframes fade { 0%{opacity:1;} 100%{opacity:0.2;} }
+        @keyframes yell { 0%{transform:scale(1);} 20%{transform:scale(1.5) skewX(-10deg); color:#ff0;} 40%{transform:scale(1.2) skewX(10deg); color:#f00;} 60%{transform:scale(1.4) skewX(-8deg); color:#ff0;} 80%{transform:scale(1.1) skewX(8deg); color:#f00;} 100%{transform:scale(1);} }
+        @keyframes cry { 0%{transform:translateY(0);} 20%{transform:translateY(10px) scaleY(0.9); color:#00f;} 40%{transform:translateY(20px) scaleY(0.8); color:#00f;} 60%{transform:translateY(10px) scaleY(0.9); color:#00f;} 80%{transform:translateY(0);} 100%{transform:translateY(0);} }
+        @keyframes fold { 0%{transform:rotateX(0);} 20%{transform:rotateX(60deg);} 40%{transform:rotateX(120deg);} 60%{transform:rotateX(180deg);} 80%{transform:rotateX(120deg);} 100%{transform:rotateX(0);} }
+        @keyframes jump { 0%{transform:translateY(0);} 20%{transform:translateY(-20px) scaleY(1.2);} 40%{transform:translateY(-30px) scaleY(0.8);} 60%{transform:translateY(-20px) scaleY(1.2);} 80%{transform:translateY(0);} 100%{transform:translateY(0);} }
         .animate-fadeIn { animation: fadeIn 0.2s; }
         @keyframes fadeIn { from { opacity: 0; transform: scale(0.95);} to { opacity: 1; transform: scale(1);} }
       `}</style>
