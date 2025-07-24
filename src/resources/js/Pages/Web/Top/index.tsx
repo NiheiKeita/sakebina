@@ -25,6 +25,11 @@ const ANIMATIONS = [
   { value: 'cry', label: '悲しい' },
   { value: 'fold', label: '折れる' },
   { value: 'jump', label: 'ジャンプ' },
+  { value: 'bigYell', label: '激しく右向きに叫ぶ' },
+  { value: 'tilt', label: '左右に傾く' },
+  { value: 'spin', label: 'ぐるぐる回る' },
+  { value: 'bounce', label: 'バウンド' },
+  { value: 'wave', label: '波打つ' },
 ]
 
 // 1文字の型
@@ -136,7 +141,17 @@ export default function SakebinaTop() {
                                         ? 'fold 1.2s infinite'
                                         : c.animation === 'jump'
                                           ? 'jump 0.7s infinite'
-                                          : 'none',
+                                          : c.animation === 'bigYell'
+                                            ? 'bigYell 0.8s infinite'
+                                            : c.animation === 'tilt'
+                                              ? 'tilt 1.2s infinite'
+                                              : c.animation === 'spin'
+                                                ? 'spin 1.2s infinite linear'
+                                                : c.animation === 'bounce'
+                                                  ? 'bounce 0.8s infinite'
+                                                  : c.animation === 'wave'
+                                                    ? 'wave 1.2s infinite'
+                                                    : 'none',
                     }}
                   >
                     {c.char}
@@ -215,7 +230,17 @@ export default function SakebinaTop() {
                                         ? 'fold 1.2s infinite'
                                         : c.animation === 'jump'
                                           ? 'jump 0.7s infinite'
-                                          : 'none',
+                                          : c.animation === 'bigYell'
+                                            ? 'bigYell 0.8s infinite'
+                                            : c.animation === 'tilt'
+                                              ? 'tilt 1.2s infinite'
+                                              : c.animation === 'spin'
+                                                ? 'spin 1.2s infinite linear'
+                                                : c.animation === 'bounce'
+                                                  ? 'bounce 0.8s infinite'
+                                                  : c.animation === 'wave'
+                                                    ? 'wave 1.2s infinite'
+                                                    : 'none',
                     }}
                     onClick={() => setSelectedIndex(i)}
                   >
@@ -282,7 +307,17 @@ export default function SakebinaTop() {
                                             ? 'fold 1.2s infinite'
                                             : c.animation === 'jump'
                                               ? 'jump 0.7s infinite'
-                                              : 'none',
+                                              : c.animation === 'bigYell'
+                                                ? 'bigYell 0.8s infinite'
+                                                : c.animation === 'tilt'
+                                                  ? 'tilt 1.2s infinite'
+                                                  : c.animation === 'spin'
+                                                    ? 'spin 1.2s infinite linear'
+                                                    : c.animation === 'bounce'
+                                                      ? 'bounce 0.8s infinite'
+                                                      : c.animation === 'wave'
+                                                        ? 'wave 1.2s infinite'
+                                                        : 'none',
                         }}
                       >
                         {c.char}
@@ -310,6 +345,11 @@ export default function SakebinaTop() {
         @keyframes cry { 0%{transform:translateY(0);} 20%{transform:translateY(10px) scaleY(0.9); color:#00f;} 40%{transform:translateY(20px) scaleY(0.8); color:#00f;} 60%{transform:translateY(10px) scaleY(0.9); color:#00f;} 80%{transform:translateY(0);} 100%{transform:translateY(0);} }
         @keyframes fold { 0%{transform:rotateX(0);} 20%{transform:rotateX(60deg);} 40%{transform:rotateX(120deg);} 60%{transform:rotateX(180deg);} 80%{transform:rotateX(120deg);} 100%{transform:rotateX(0);} }
         @keyframes jump { 0%{transform:translateY(0);} 20%{transform:translateY(-20px) scaleY(1.2);} 40%{transform:translateY(-30px) scaleY(0.8);} 60%{transform:translateY(-20px) scaleY(1.2);} 80%{transform:translateY(0);} 100%{transform:translateY(0);} }
+        @keyframes bigYell { 0%{transform:scale(1) rotate(0);} 10%{transform:scale(1.7) rotate(10deg) skewX(10deg);} 30%{transform:scale(2.2) rotate(20deg) skewX(20deg);} 50%{transform:scale(2.5) rotate(25deg) skewX(30deg);} 70%{transform:scale(2.2) rotate(20deg) skewX(20deg);} 90%{transform:scale(1.7) rotate(10deg) skewX(10deg);} 100%{transform:scale(1) rotate(0);} }
+        @keyframes tilt { 0%{transform:rotate(-10deg);} 20%{transform:rotate(10deg);} 40%{transform:rotate(-10deg);} 60%{transform:rotate(10deg);} 80%{transform:rotate(-10deg);} 100%{transform:rotate(0);} }
+        @keyframes spin { 0%{transform:rotate(0);} 100%{transform:rotate(360deg);} }
+        @keyframes bounce { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-30px);} }
+        @keyframes wave { 0%{transform:skewY(0);} 20%{transform:skewY(10deg);} 40%{transform:skewY(-10deg);} 60%{transform:skewY(10deg);} 80%{transform:skewY(-10deg);} 100%{transform:skewY(0);} }
         .animate-fadeIn { animation: fadeIn 0.2s; }
         @keyframes fadeIn { from { opacity: 0; transform: scale(0.95);} to { opacity: 1; transform: scale(1);} }
       `}</style>
