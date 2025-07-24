@@ -5,7 +5,7 @@ import WebLayout from '@/Layouts/WebLayout'
 import InputLabel from '@/Components/InputLabel'
 import TextInput from '@/Components/TextInput'
 import InputError from '@/Components/InputError'
-import { ArrowLeftIcon } from '@heroicons/react/24/outline'
+// import { ArrowLeftIcon } from '@heroicons/react/24/outline'
 
 interface Props {
   repository: Repository;
@@ -42,7 +42,7 @@ export default function ArticleCreate({ repository, branches }: Props) {
             href={route('repositories.show', repository.id)}
             className="mb-4 inline-flex items-center text-sm text-gray-500 hover:text-gray-700"
           >
-            <ArrowLeftIcon className="mr-1 h-4 w-4" />
+            {/* <ArrowLeftIcon className="mr-1 h-4 w-4" /> */}
             {repository.name} に戻る
           </a>
           <h1 className="text-3xl font-bold text-gray-900">新しい記事</h1>

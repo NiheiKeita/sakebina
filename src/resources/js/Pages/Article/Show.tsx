@@ -2,13 +2,13 @@ import React from 'react'
 import { Head, Link } from '@inertiajs/react'
 import { Repository, Article, ArticleVersion, Branch } from '@/types'
 import WebLayout from '@/Layouts/WebLayout'
-import {
-  PencilIcon,
-  ClockIcon,
-  UserIcon,
-  GitBranchIcon,
-  DocumentTextIcon
-} from '@heroicons/react/24/outline'
+// import {
+//   PencilIcon,
+//   ClockIcon,
+//   UserIcon,
+//   GitBranchIcon,
+//   DocumentTextIcon
+// } from '@heroicons/react/24/outline'
 
 interface Props {
   repository: Repository;
@@ -59,15 +59,15 @@ export default function ArticleShow({ repository, article, branches }: Props) {
               </h1>
               <div className="flex items-center space-x-4 text-sm text-gray-500">
                 <div className="flex items-center">
-                  <UserIcon className="mr-1 h-4 w-4" />
+                  {/* <UserIcon className="mr-1 h-4 w-4" /> */}
                   <span>{article.current_commit.user.name}</span>
                 </div>
                 <div className="flex items-center">
-                  <ClockIcon className="mr-1 h-4 w-4" />
+                  {/* <ClockIcon className="mr-1 h-4 w-4" /> */}
                   <span>{new Date(article.updated_at).toLocaleDateString('ja-JP')}</span>
                 </div>
                 <div className="flex items-center">
-                  <GitBranchIcon className="mr-1 h-4 w-4" />
+                  {/* <GitBranchIcon className="mr-1 h-4 w-4" /> */}
                   <span>{branches.find(b => b.id === currentVersion?.branch_id)?.name}</span>
                 </div>
               </div>
@@ -77,7 +77,7 @@ export default function ArticleShow({ repository, article, branches }: Props) {
                 href={route('repositories.articles.edit', [repository.id, article.id])}
                 className="inline-flex items-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white transition duration-150 ease-in-out hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 active:bg-blue-900"
               >
-                <PencilIcon className="mr-2 h-4 w-4" />
+                {/* <PencilIcon className="mr-2 h-4 w-4" /> */}
                 編集
               </Link>
             </div>
@@ -143,8 +143,8 @@ export default function ArticleShow({ repository, article, branches }: Props) {
                     <div
                       key={version.id}
                       className={`rounded-lg border p-3 ${version.id === currentVersion?.id
-                          ? 'border-blue-200 bg-blue-50'
-                          : 'border-gray-200 hover:bg-gray-50'
+                        ? 'border-blue-200 bg-blue-50'
+                        : 'border-gray-200 hover:bg-gray-50'
                         }`}
                     >
                       <div className="flex items-center justify-between">
@@ -179,12 +179,12 @@ export default function ArticleShow({ repository, article, branches }: Props) {
                     <div
                       key={branch.id}
                       className={`flex items-center justify-between rounded-lg border p-3 ${branch.id === currentVersion?.branch_id
-                          ? 'border-green-200 bg-green-50'
-                          : 'border-gray-200'
+                        ? 'border-green-200 bg-green-50'
+                        : 'border-gray-200'
                         }`}
                     >
                       <div className="flex items-center">
-                        <GitBranchIcon className="mr-2 h-4 w-4 text-gray-400" />
+                        {/* <GitBranchIcon className="mr-2 h-4 w-4 text-gray-400" /> */}
                         <span className="text-sm font-medium text-gray-900">{branch.name}</span>
                         {branch.id === currentVersion?.branch_id && (
                           <span className="ml-2 rounded-full bg-green-100 px-2 py-1 text-xs text-green-800">
