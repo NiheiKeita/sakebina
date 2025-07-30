@@ -437,12 +437,20 @@ export default function LandingPage() {
                         <div className="space-y-8">
                             {/* サンプル叫び1 */}
                             <div className="relative my-8">
-                                {/* 背景装飾 */}
+                                {/* 背景装飾（増量！） */}
                                 <div className="absolute -left-6 -top-6 h-12 w-12 animate-bounce rounded-full bg-gradient-to-br from-pink-300 to-yellow-300 opacity-30"></div>
                                 <div className="absolute right-2 top-2 animate-spin text-3xl opacity-40">⭐️</div>
                                 <div className="absolute bottom-0 left-1/2 animate-pulse text-4xl opacity-30" style={{ transform: 'translateX(-50%)' }}>💥</div>
                                 <div className="absolute -bottom-6 right-6 animate-bounce text-3xl opacity-30">⚡️</div>
                                 <div className="absolute left-0 top-1/2 animate-pulse text-3xl opacity-30" style={{ transform: 'translateY(-50%)' }}>❤️</div>
+                                <div className="absolute left-1/4 top-0 animate-bounce text-2xl opacity-30">💦</div>
+                                <div className="absolute right-1/4 bottom-0 animate-spin text-3xl opacity-20">🌀</div>
+                                <div className="absolute left-10 top-10 animate-wiggle text-2xl opacity-40">💀</div>
+                                <div className="absolute right-10 top-1/3 animate-float text-3xl opacity-30">☁️</div>
+                                <div className="absolute left-1/2 top-1/4 animate-scale text-2xl opacity-30">🎶</div>
+                                <div className="absolute right-1/2 bottom-1/4 animate-fade text-3xl opacity-20">✨</div>
+                                <div className="absolute left-12 bottom-2 animate-bounce text-2xl opacity-30">💖</div>
+                                <div className="absolute right-12 top-8 animate-spin text-2xl opacity-20">🌟</div>
                                 {/* サンプル叫び本体 */}
                                 <div className="animate-pulse-glow relative z-10 rounded-2xl border-4 border-pink-200 bg-gradient-to-br from-white via-yellow-50 to-pink-100 p-6 shadow-xl">
                                     <span style={{ color: '#ff0000', fontSize: '2.5rem', fontWeight: 'bold', animation: 'yell 0.7s infinite' }}>や</span>
@@ -454,12 +462,18 @@ export default function LandingPage() {
                             </div>
                             {/* サンプル叫び2 */}
                             <div className="relative my-8">
-                                {/* 背景装飾 */}
+                                {/* 背景装飾（増量！） */}
                                 <div className="absolute -top-6 right-0 h-12 w-12 animate-bounce rounded-full bg-gradient-to-br from-blue-300 to-purple-300 opacity-30"></div>
                                 <div className="absolute left-2 top-2 animate-spin text-3xl opacity-40">🌈</div>
                                 <div className="absolute bottom-0 left-1/2 animate-pulse text-4xl opacity-30" style={{ transform: 'translateX(-50%)' }}>💫</div>
                                 <div className="absolute -bottom-6 left-6 animate-bounce text-3xl opacity-30">✨</div>
                                 <div className="absolute right-0 top-1/2 animate-pulse text-3xl opacity-30" style={{ transform: 'translateY(-50%)' }}>🔥</div>
+                                <div className="absolute left-1/4 bottom-0 animate-float text-2xl opacity-30">☁️</div>
+                                <div className="absolute right-1/4 top-0 animate-wiggle text-3xl opacity-20">💀</div>
+                                <div className="absolute left-10 bottom-10 animate-scale text-2xl opacity-40">💖</div>
+                                <div className="absolute right-10 bottom-1/3 animate-fade text-3xl opacity-30">✨</div>
+                                <div className="absolute left-1/2 bottom-1/4 animate-bounce text-2xl opacity-30">🎶</div>
+                                <div className="absolute right-1/2 top-1/4 animate-spin text-3xl opacity-20">🌟</div>
                                 {/* サンプル叫び本体 */}
                                 <div className="animate-pulse-glow relative z-10 rounded-2xl border-4 border-blue-200 bg-gradient-to-br from-white via-blue-50 to-purple-100 p-6 shadow-xl">
                                     <span style={{ color: '#ff6600', fontSize: '2.3rem', fontWeight: 'bold', animation: 'yell 0.7s infinite', display: 'inline-block', transform: 'rotate(-8deg)' }}>つ</span>
@@ -726,13 +740,10 @@ export default function LandingPage() {
           75%{transform:translateY(-10px) rotate(-5deg);}
           100%{transform:translateY(0) rotate(0deg);}
         }
-        @keyframes wiggle {
-          0%{transform:rotate(0deg);}
-          25%{transform:rotate(5deg);}
-          50%{transform:rotate(0deg);}
-          75%{transform:rotate(-5deg);}
-          100%{transform:rotate(0deg);}
-        }
+        @keyframes wiggle { 0%{transform:rotate(0deg);} 25%{transform:rotate(8deg);} 50%{transform:rotate(-8deg);} 75%{transform:rotate(8deg);} 100%{transform:rotate(0deg);} }
+        @keyframes float { 0%{transform:translateY(0);} 50%{transform:translateY(-12px);} 100%{transform:translateY(0);} }
+        @keyframes scale { 0%{transform:scale(1);} 50%{transform:scale(1.2);} 100%{transform:scale(1);} }
+        @keyframes fade { 0%{opacity:0.2;} 50%{opacity:0.7;} 100%{opacity:0.2;} }
         .animate-shake { animation: shake 0.5s infinite; }
         .animate-explode { animation: explode 0.8s infinite; }
         .animate-cry { animation: cry 1.2s infinite; }
@@ -741,7 +752,10 @@ export default function LandingPage() {
         .animate-rainbow { animation: rainbow 2s infinite; }
         .animate-pulse-glow { animation: pulse-glow 1.5s infinite; }
         .animate-bounce-rotate { animation: bounce-rotate 1s infinite; }
-        .animate-wiggle { animation: wiggle 0.5s infinite; }
+        .animate-wiggle { animation: wiggle 1.2s infinite; }
+        .animate-float { animation: float 2s infinite; }
+        .animate-scale { animation: scale 1.5s infinite; }
+        .animate-fade { animation: fade 2s infinite; }
       `}</style>
         </WebLayout>
     )
