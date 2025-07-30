@@ -156,68 +156,68 @@ export default function LandingPage() {
             <div className="bg-white py-20">
                 <div className="mx-auto max-w-6xl px-4">
                     <h2 className={`mb-16 text-center text-4xl font-bold text-gray-800 md:text-5xl ${isShaking ? 'animate-shake' :
+                        isSpinning ? 'animate-spin' :
+                            isWaving ? 'animate-wave' :
+                                isExploding ? 'animate-explode' :
+                                    isCrying ? 'animate-cry' :
+                                        isJumping ? 'animate-jump' :
+                                            isBouncing ? 'animate-bounce' : ''
+                        }`}>
+                        <span className={`inline-block ${isShaking ? 'animate-shake' :
                             isSpinning ? 'animate-spin' :
                                 isWaving ? 'animate-wave' :
                                     isExploding ? 'animate-explode' :
                                         isCrying ? 'animate-cry' :
                                             isJumping ? 'animate-jump' :
                                                 isBouncing ? 'animate-bounce' : ''
-                        }`}>
-                        <span className={`inline-block ${isShaking ? 'animate-shake' :
-                                isSpinning ? 'animate-spin' :
-                                    isWaving ? 'animate-wave' :
-                                        isExploding ? 'animate-explode' :
-                                            isCrying ? 'animate-cry' :
-                                                isJumping ? 'animate-jump' :
-                                                    isBouncing ? 'animate-bounce' : ''
                             }`}>さ</span>
                         <span className={`inline-block ${isBouncing ? 'animate-bounce' :
-                                isWaving ? 'animate-wave' :
-                                    isShaking ? 'animate-shake' :
-                                        isSpinning ? 'animate-spin' :
-                                            isExploding ? 'animate-explode' :
-                                                isCrying ? 'animate-cry' :
-                                                    isJumping ? 'animate-jump' : ''
+                            isWaving ? 'animate-wave' :
+                                isShaking ? 'animate-shake' :
+                                    isSpinning ? 'animate-spin' :
+                                        isExploding ? 'animate-explode' :
+                                            isCrying ? 'animate-cry' :
+                                                isJumping ? 'animate-jump' : ''
                             }`}>け</span>
                         <span className={`inline-block ${isSpinning ? 'animate-spin' :
-                                isJumping ? 'animate-jump' :
-                                    isBouncing ? 'animate-bounce' :
-                                        isWaving ? 'animate-wave' :
-                                            isShaking ? 'animate-shake' :
-                                                isExploding ? 'animate-explode' :
-                                                    isCrying ? 'animate-cry' : ''
+                            isJumping ? 'animate-jump' :
+                                isBouncing ? 'animate-bounce' :
+                                    isWaving ? 'animate-wave' :
+                                        isShaking ? 'animate-shake' :
+                                            isExploding ? 'animate-explode' :
+                                                isCrying ? 'animate-cry' : ''
                             }`}>び</span>
                         <span className={`inline-block ${isExploding ? 'animate-explode' :
-                                isCrying ? 'animate-cry' :
-                                    isSpinning ? 'animate-spin' :
-                                        isJumping ? 'animate-jump' :
-                                            isBouncing ? 'animate-bounce' :
-                                                isWaving ? 'animate-wave' :
-                                                    isShaking ? 'animate-shake' : ''
+                            isCrying ? 'animate-cry' :
+                                isSpinning ? 'animate-spin' :
+                                    isJumping ? 'animate-jump' :
+                                        isBouncing ? 'animate-bounce' :
+                                            isWaving ? 'animate-wave' :
+                                                isShaking ? 'animate-shake' : ''
                             }`}>な</span>
                         <span className={`inline-block ${isCrying ? 'animate-cry' :
-                                isExploding ? 'animate-explode' :
-                                    isSpinning ? 'animate-spin' :
-                                        isJumping ? 'animate-jump' :
-                                            isBouncing ? 'animate-bounce' :
-                                                isWaving ? 'animate-wave' :
-                                                    isShaking ? 'animate-shake' : ''
+                            isExploding ? 'animate-explode' :
+                                isSpinning ? 'animate-spin' :
+                                    isJumping ? 'animate-jump' :
+                                        isBouncing ? 'animate-bounce' :
+                                            isWaving ? 'animate-wave' :
+                                                isShaking ? 'animate-shake' : ''
                             }`}>の</span>
                         <span className={`inline-block ${isJumping ? 'animate-jump' :
+                            isCrying ? 'animate-cry' :
+                                isExploding ? 'animate-explode' :
+                                    isSpinning ? 'animate-spin' :
+                                        isBouncing ? 'animate-bounce' :
+                                            isWaving ? 'animate-wave' :
+                                                isShaking ? 'animate-shake' : ''
+                            }`}>特</span>
+                        <span className={`inline-block ${isWaving ? 'animate-wave' :
+                            isJumping ? 'animate-jump' :
                                 isCrying ? 'animate-cry' :
                                     isExploding ? 'animate-explode' :
                                         isSpinning ? 'animate-spin' :
                                             isBouncing ? 'animate-bounce' :
-                                                isWaving ? 'animate-wave' :
-                                                    isShaking ? 'animate-shake' : ''
-                            }`}>特</span>
-                        <span className={`inline-block ${isWaving ? 'animate-wave' :
-                                isJumping ? 'animate-jump' :
-                                    isCrying ? 'animate-cry' :
-                                        isExploding ? 'animate-explode' :
-                                            isSpinning ? 'animate-spin' :
-                                                isBouncing ? 'animate-bounce' :
-                                                    isShaking ? 'animate-shake' : ''
+                                                isShaking ? 'animate-shake' : ''
                             }`}>徴</span>
                     </h2>
 
@@ -274,136 +274,136 @@ export default function LandingPage() {
             <div className="bg-gradient-to-br from-pink-50 to-yellow-50 py-20">
                 <div className="mx-auto max-w-6xl px-4">
                     <h2 className={`mb-16 text-center text-4xl font-bold text-gray-800 md:text-5xl ${isBouncing ? 'animate-bounce' :
+                        isWaving ? 'animate-wave' :
+                            isShaking ? 'animate-shake' :
+                                isSpinning ? 'animate-spin' :
+                                    isExploding ? 'animate-explode' :
+                                        isCrying ? 'animate-cry' :
+                                            isJumping ? 'animate-jump' : ''
+                        }`}>
+                        <span className={`inline-block ${isBouncing ? 'animate-bounce' :
                             isWaving ? 'animate-wave' :
                                 isShaking ? 'animate-shake' :
                                     isSpinning ? 'animate-spin' :
                                         isExploding ? 'animate-explode' :
                                             isCrying ? 'animate-cry' :
                                                 isJumping ? 'animate-jump' : ''
-                        }`}>
-                        <span className={`inline-block ${isBouncing ? 'animate-bounce' :
-                                isWaving ? 'animate-wave' :
-                                    isShaking ? 'animate-shake' :
-                                        isSpinning ? 'animate-spin' :
-                                            isExploding ? 'animate-explode' :
-                                                isCrying ? 'animate-cry' :
-                                                    isJumping ? 'animate-jump' : ''
                             }`}>使</span>
                         <span className={`inline-block ${isWaving ? 'animate-wave' :
-                                isShaking ? 'animate-shake' :
-                                    isSpinning ? 'animate-spin' :
-                                        isExploding ? 'animate-explode' :
-                                            isCrying ? 'animate-cry' :
-                                                isJumping ? 'animate-jump' :
-                                                    isBouncing ? 'animate-bounce' : ''
-                            }`}>用</span>
-                        <span className={`inline-block ${isShaking ? 'animate-shake' :
+                            isShaking ? 'animate-shake' :
                                 isSpinning ? 'animate-spin' :
                                     isExploding ? 'animate-explode' :
                                         isCrying ? 'animate-cry' :
                                             isJumping ? 'animate-jump' :
-                                                isBouncing ? 'animate-bounce' :
-                                                    isWaving ? 'animate-wave' : ''
+                                                isBouncing ? 'animate-bounce' : ''
+                            }`}>用</span>
+                        <span className={`inline-block ${isShaking ? 'animate-shake' :
+                            isSpinning ? 'animate-spin' :
+                                isExploding ? 'animate-explode' :
+                                    isCrying ? 'animate-cry' :
+                                        isJumping ? 'animate-jump' :
+                                            isBouncing ? 'animate-bounce' :
+                                                isWaving ? 'animate-wave' : ''
                             }`}>例</span>
                     </h2>
 
                     <div className="grid items-center gap-12 md:grid-cols-2">
                         <div>
                             <h3 className={`mb-6 text-3xl font-bold text-gray-800 ${isSpinning ? 'animate-spin' :
+                                isJumping ? 'animate-jump' :
+                                    isBouncing ? 'animate-bounce' :
+                                        isWaving ? 'animate-wave' :
+                                            isShaking ? 'animate-shake' :
+                                                isExploding ? 'animate-explode' :
+                                                    isCrying ? 'animate-cry' : ''
+                                }`}>
+                                <span className={`inline-block ${isSpinning ? 'animate-spin' :
                                     isJumping ? 'animate-jump' :
                                         isBouncing ? 'animate-bounce' :
                                             isWaving ? 'animate-wave' :
                                                 isShaking ? 'animate-shake' :
                                                     isExploding ? 'animate-explode' :
                                                         isCrying ? 'animate-cry' : ''
-                                }`}>
-                                <span className={`inline-block ${isSpinning ? 'animate-spin' :
-                                        isJumping ? 'animate-jump' :
-                                            isBouncing ? 'animate-bounce' :
-                                                isWaving ? 'animate-wave' :
-                                                    isShaking ? 'animate-shake' :
-                                                        isExploding ? 'animate-explode' :
-                                                            isCrying ? 'animate-cry' : ''
                                     }`}>こ</span>
                                 <span className={`inline-block ${isJumping ? 'animate-jump' :
-                                        isBouncing ? 'animate-bounce' :
-                                            isWaving ? 'animate-wave' :
-                                                isShaking ? 'animate-shake' :
-                                                    isSpinning ? 'animate-spin' :
-                                                        isExploding ? 'animate-explode' :
-                                                            isCrying ? 'animate-cry' : ''
+                                    isBouncing ? 'animate-bounce' :
+                                        isWaving ? 'animate-wave' :
+                                            isShaking ? 'animate-shake' :
+                                                isSpinning ? 'animate-spin' :
+                                                    isExploding ? 'animate-explode' :
+                                                        isCrying ? 'animate-cry' : ''
                                     }`}>ん</span>
                                 <span className={`inline-block ${isBouncing ? 'animate-bounce' :
-                                        isWaving ? 'animate-wave' :
-                                            isShaking ? 'animate-shake' :
-                                                isSpinning ? 'animate-spin' :
-                                                    isJumping ? 'animate-jump' :
-                                                        isExploding ? 'animate-explode' :
-                                                            isCrying ? 'animate-cry' : ''
+                                    isWaving ? 'animate-wave' :
+                                        isShaking ? 'animate-shake' :
+                                            isSpinning ? 'animate-spin' :
+                                                isJumping ? 'animate-jump' :
+                                                    isExploding ? 'animate-explode' :
+                                                        isCrying ? 'animate-cry' : ''
                                     }`}>な</span>
                                 <span className={`inline-block ${isWaving ? 'animate-wave' :
-                                        isShaking ? 'animate-shake' :
-                                            isSpinning ? 'animate-spin' :
-                                                isBouncing ? 'animate-bounce' :
-                                                    isJumping ? 'animate-jump' :
-                                                        isExploding ? 'animate-explode' :
-                                                            isCrying ? 'animate-cry' : ''
+                                    isShaking ? 'animate-shake' :
+                                        isSpinning ? 'animate-spin' :
+                                            isBouncing ? 'animate-bounce' :
+                                                isJumping ? 'animate-jump' :
+                                                    isExploding ? 'animate-explode' :
+                                                        isCrying ? 'animate-cry' : ''
                                     }`}>時</span>
                                 <span className={`inline-block ${isShaking ? 'animate-shake' :
-                                        isSpinning ? 'animate-spin' :
-                                            isBouncing ? 'animate-bounce' :
-                                                isWaving ? 'animate-wave' :
-                                                    isJumping ? 'animate-jump' :
-                                                        isExploding ? 'animate-explode' :
-                                                            isCrying ? 'animate-cry' : ''
+                                    isSpinning ? 'animate-spin' :
+                                        isBouncing ? 'animate-bounce' :
+                                            isWaving ? 'animate-wave' :
+                                                isJumping ? 'animate-jump' :
+                                                    isExploding ? 'animate-explode' :
+                                                        isCrying ? 'animate-cry' : ''
                                     }`}>に</span>
                                 <span className={`inline-block ${isSpinning ? 'animate-spin' :
-                                        isBouncing ? 'animate-bounce' :
-                                            isWaving ? 'animate-wave' :
-                                                isShaking ? 'animate-shake' :
-                                                    isJumping ? 'animate-jump' :
-                                                        isExploding ? 'animate-explode' :
-                                                            isCrying ? 'animate-cry' : ''
+                                    isBouncing ? 'animate-bounce' :
+                                        isWaving ? 'animate-wave' :
+                                            isShaking ? 'animate-shake' :
+                                                isJumping ? 'animate-jump' :
+                                                    isExploding ? 'animate-explode' :
+                                                        isCrying ? 'animate-cry' : ''
                                     }`}>使</span>
                                 <span className={`inline-block ${isBouncing ? 'animate-bounce' :
-                                        isWaving ? 'animate-wave' :
-                                            isShaking ? 'animate-shake' :
-                                                isSpinning ? 'animate-spin' :
-                                                    isJumping ? 'animate-jump' :
-                                                        isExploding ? 'animate-explode' :
-                                                            isCrying ? 'animate-cry' : ''
-                                    }`}>っ</span>
-                                <span className={`inline-block ${isWaving ? 'animate-wave' :
+                                    isWaving ? 'animate-wave' :
                                         isShaking ? 'animate-shake' :
                                             isSpinning ? 'animate-spin' :
-                                                isBouncing ? 'animate-bounce' :
-                                                    isJumping ? 'animate-jump' :
-                                                        isExploding ? 'animate-explode' :
-                                                            isCrying ? 'animate-cry' : ''
-                                    }`}>て</span>
-                                <span className={`inline-block ${isShaking ? 'animate-shake' :
+                                                isJumping ? 'animate-jump' :
+                                                    isExploding ? 'animate-explode' :
+                                                        isCrying ? 'animate-cry' : ''
+                                    }`}>っ</span>
+                                <span className={`inline-block ${isWaving ? 'animate-wave' :
+                                    isShaking ? 'animate-shake' :
                                         isSpinning ? 'animate-spin' :
                                             isBouncing ? 'animate-bounce' :
-                                                isWaving ? 'animate-wave' :
-                                                    isJumping ? 'animate-jump' :
-                                                        isExploding ? 'animate-explode' :
-                                                            isCrying ? 'animate-cry' : ''
-                                    }`}>み</span>
-                                <span className={`inline-block ${isSpinning ? 'animate-spin' :
+                                                isJumping ? 'animate-jump' :
+                                                    isExploding ? 'animate-explode' :
+                                                        isCrying ? 'animate-cry' : ''
+                                    }`}>て</span>
+                                <span className={`inline-block ${isShaking ? 'animate-shake' :
+                                    isSpinning ? 'animate-spin' :
                                         isBouncing ? 'animate-bounce' :
                                             isWaving ? 'animate-wave' :
-                                                isShaking ? 'animate-shake' :
-                                                    isJumping ? 'animate-jump' :
-                                                        isExploding ? 'animate-explode' :
-                                                            isCrying ? 'animate-cry' : ''
-                                    }`}>て</span>
-                                <span className={`inline-block ${isBouncing ? 'animate-bounce' :
+                                                isJumping ? 'animate-jump' :
+                                                    isExploding ? 'animate-explode' :
+                                                        isCrying ? 'animate-cry' : ''
+                                    }`}>み</span>
+                                <span className={`inline-block ${isSpinning ? 'animate-spin' :
+                                    isBouncing ? 'animate-bounce' :
                                         isWaving ? 'animate-wave' :
                                             isShaking ? 'animate-shake' :
-                                                isSpinning ? 'animate-spin' :
-                                                    isJumping ? 'animate-jump' :
-                                                        isExploding ? 'animate-explode' :
-                                                            isCrying ? 'animate-cry' : ''
+                                                isJumping ? 'animate-jump' :
+                                                    isExploding ? 'animate-explode' :
+                                                        isCrying ? 'animate-cry' : ''
+                                    }`}>て</span>
+                                <span className={`inline-block ${isBouncing ? 'animate-bounce' :
+                                    isWaving ? 'animate-wave' :
+                                        isShaking ? 'animate-shake' :
+                                            isSpinning ? 'animate-spin' :
+                                                isJumping ? 'animate-jump' :
+                                                    isExploding ? 'animate-explode' :
+                                                        isCrying ? 'animate-cry' : ''
                                     }`}>！</span>
                             </h3>
                             <ul className="space-y-4 text-lg text-gray-700">
@@ -436,76 +436,77 @@ export default function LandingPage() {
 
                         <div className="rounded-2xl bg-white p-8 shadow-xl">
                             <h4 className={`mb-4 text-center text-xl font-bold ${isJumping ? 'animate-jump' :
+                                isBouncing ? 'animate-bounce' :
+                                    isWaving ? 'animate-wave' :
+                                        isShaking ? 'animate-shake' :
+                                            isSpinning ? 'animate-spin' :
+                                                isExploding ? 'animate-explode' :
+                                                    isCrying ? 'animate-cry' : ''
+                                }`}>
+                                <span className={`inline-block ${isJumping ? 'animate-jump' :
                                     isBouncing ? 'animate-bounce' :
                                         isWaving ? 'animate-wave' :
                                             isShaking ? 'animate-shake' :
                                                 isSpinning ? 'animate-spin' :
                                                     isExploding ? 'animate-explode' :
                                                         isCrying ? 'animate-cry' : ''
-                                }`}>
-                                <span className={`inline-block ${isJumping ? 'animate-jump' :
-                                        isBouncing ? 'animate-bounce' :
-                                            isWaving ? 'animate-wave' :
-                                                isShaking ? 'animate-shake' :
-                                                    isSpinning ? 'animate-spin' :
-                                                        isExploding ? 'animate-explode' :
-                                                            isCrying ? 'animate-cry' : ''
                                     }`}>サ</span>
                                 <span className={`inline-block ${isBouncing ? 'animate-bounce' :
-                                        isWaving ? 'animate-wave' :
-                                            isShaking ? 'animate-shake' :
-                                                isSpinning ? 'animate-spin' :
-                                                    isJumping ? 'animate-jump' :
-                                                        isExploding ? 'animate-explode' :
-                                                            isCrying ? 'animate-cry' : ''
-                                    }`}>ン</span>
-                                <span className={`inline-block ${isWaving ? 'animate-wave' :
+                                    isWaving ? 'animate-wave' :
                                         isShaking ? 'animate-shake' :
                                             isSpinning ? 'animate-spin' :
-                                                isBouncing ? 'animate-bounce' :
-                                                    isJumping ? 'animate-jump' :
-                                                        isExploding ? 'animate-explode' :
-                                                            isCrying ? 'animate-cry' : ''
-                                    }`}>プ</span>
-                                <span className={`inline-block ${isShaking ? 'animate-shake' :
+                                                isJumping ? 'animate-jump' :
+                                                    isExploding ? 'animate-explode' :
+                                                        isCrying ? 'animate-cry' : ''
+                                    }`}>ン</span>
+                                <span className={`inline-block ${isWaving ? 'animate-wave' :
+                                    isShaking ? 'animate-shake' :
                                         isSpinning ? 'animate-spin' :
                                             isBouncing ? 'animate-bounce' :
-                                                isWaving ? 'animate-wave' :
-                                                    isJumping ? 'animate-jump' :
-                                                        isExploding ? 'animate-explode' :
-                                                            isCrying ? 'animate-cry' : ''
-                                    }`}>ル</span>
-                                <span className={`inline-block ${isSpinning ? 'animate-spin' :
+                                                isJumping ? 'animate-jump' :
+                                                    isExploding ? 'animate-explode' :
+                                                        isCrying ? 'animate-cry' : ''
+                                    }`}>プ</span>
+                                <span className={`inline-block ${isShaking ? 'animate-shake' :
+                                    isSpinning ? 'animate-spin' :
                                         isBouncing ? 'animate-bounce' :
                                             isWaving ? 'animate-wave' :
-                                                isShaking ? 'animate-shake' :
-                                                    isJumping ? 'animate-jump' :
-                                                        isExploding ? 'animate-explode' :
-                                                            isCrying ? 'animate-cry' : ''
-                                    }`}>叫</span>
-                                <span className={`inline-block ${isBouncing ? 'animate-bounce' :
+                                                isJumping ? 'animate-jump' :
+                                                    isExploding ? 'animate-explode' :
+                                                        isCrying ? 'animate-cry' : ''
+                                    }`}>ル</span>
+                                <span className={`inline-block ${isSpinning ? 'animate-spin' :
+                                    isBouncing ? 'animate-bounce' :
                                         isWaving ? 'animate-wave' :
                                             isShaking ? 'animate-shake' :
-                                                isSpinning ? 'animate-spin' :
-                                                    isJumping ? 'animate-jump' :
-                                                        isExploding ? 'animate-explode' :
-                                                            isCrying ? 'animate-cry' : ''
+                                                isJumping ? 'animate-jump' :
+                                                    isExploding ? 'animate-explode' :
+                                                        isCrying ? 'animate-cry' : ''
+                                    }`}>叫</span>
+                                <span className={`inline-block ${isBouncing ? 'animate-bounce' :
+                                    isWaving ? 'animate-wave' :
+                                        isShaking ? 'animate-shake' :
+                                            isSpinning ? 'animate-spin' :
+                                                isJumping ? 'animate-jump' :
+                                                    isExploding ? 'animate-explode' :
+                                                        isCrying ? 'animate-cry' : ''
                                     }`}>び</span>
                             </h4>
                             <div className="space-y-4">
                                 <div className="rounded-lg bg-gray-100 p-4 text-center">
-                                    <span className="text-3xl" style={{ color: '#ff0000', animation: 'shake 0.5s infinite' }}>や</span>
-                                    <span className="text-3xl" style={{ color: '#00ff00', animation: 'jump 0.7s infinite' }}>っ</span>
-                                    <span className="text-3xl" style={{ color: '#0000ff', animation: 'spin 1.2s infinite linear' }}>た</span>
-                                    <span className="text-3xl" style={{ color: '#ffff00', animation: 'bounce 0.8s infinite' }}>ー</span>
-                                    <span className="text-3xl" style={{ color: '#ff00ff', animation: 'explode 1s infinite' }}>！</span>
+                                    <span style={{ color: '#ff0000', fontSize: '2.5rem', fontWeight: 'bold', animation: 'yell 0.7s infinite' }}>や</span>
+                                    <span style={{ color: '#ff6600', fontSize: '2.2rem', fontWeight: 'bold', animation: 'explode 1s infinite', display: 'inline-block', transform: 'rotate(-8deg)' }}>っ</span>
+                                    <span style={{ color: '#00bfff', fontSize: '2.2rem', fontWeight: 'bold', animation: 'jump 0.7s infinite', display: 'inline-block', transform: 'rotate(8deg)' }}>た</span>
+                                    <span style={{ color: '#00ff00', fontSize: '2.2rem', fontWeight: 'bold', animation: 'wave 1.2s infinite', display: 'inline-block', transform: 'skewY(-8deg)' }}>ー</span>
+                                    <span style={{ color: '#ff00ff', fontSize: '3rem', fontWeight: 'bold', animation: 'bigYell 0.8s infinite', display: 'inline-block', transform: 'rotate(-10deg) scale(1.3)' }}>！</span>
                                 </div>
                                 <div className="rounded-lg bg-gray-100 p-4 text-center">
-                                    <span className="text-3xl" style={{ color: '#ff6600', animation: 'yell 0.7s infinite' }}>つ</span>
-                                    <span className="text-3xl" style={{ color: '#6600ff', animation: 'wave 1.2s infinite' }}>か</span>
-                                    <span className="text-3xl" style={{ color: '#00ff66', animation: 'tilt 1.2s infinite' }}>れ</span>
-                                    <span className="text-3xl" style={{ color: '#ff0066', animation: 'cry 1.2s infinite' }}>た</span>
-                                    <span className="text-3xl" style={{ color: '#666666', animation: 'fold 1.2s infinite' }}>ー</span>
+                                    <span style={{ color: '#ff6600', fontSize: '2.3rem', fontWeight: 'bold', animation: 'yell 0.7s infinite', display: 'inline-block', transform: 'rotate(-8deg)' }}>つ</span>
+                                    <span style={{ color: '#6600ff', fontSize: '2.1rem', fontWeight: 'bold', animation: 'wave 1.2s infinite', display: 'inline-block', transform: 'skewY(8deg)' }}>か</span>
+                                    <span style={{ color: '#00ff66', fontSize: '2.2rem', fontWeight: 'bold', animation: 'tilt 1.2s infinite', display: 'inline-block', transform: 'rotate(8deg)' }}>れ</span>
+                                    <span style={{ color: '#ff0066', fontSize: '2.2rem', fontWeight: 'bold', animation: 'cry 1.2s infinite', display: 'inline-block', transform: 'skewY(-8deg)' }}>た</span>
+                                    <span style={{ color: '#666666', fontSize: '2.8rem', fontWeight: 'bold', animation: 'fold 1.2s infinite', display: 'inline-block', transform: 'rotate(10deg) scale(1.2)' }}>ー</span>
+                                    <span style={{ color: '#ff0000', fontSize: '2.5rem', fontWeight: 'bold', animation: 'explode 1s infinite', display: 'inline-block', transform: 'rotate(-10deg)' }}>！</span>
                                 </div>
                             </div>
                         </div>
@@ -517,162 +518,162 @@ export default function LandingPage() {
             <div className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 py-20">
                 <div className="mx-auto max-w-4xl px-4 text-center">
                     <h2 className={`mb-8 text-4xl font-bold text-white md:text-5xl ${isCrying ? 'animate-cry' :
+                        isExploding ? 'animate-explode' :
+                            isSpinning ? 'animate-spin' :
+                                isJumping ? 'animate-jump' :
+                                    isBouncing ? 'animate-bounce' :
+                                        isWaving ? 'animate-wave' :
+                                            isShaking ? 'animate-shake' : ''
+                        }`}>
+                        <span className={`inline-block ${isCrying ? 'animate-cry' :
                             isExploding ? 'animate-explode' :
                                 isSpinning ? 'animate-spin' :
                                     isJumping ? 'animate-jump' :
                                         isBouncing ? 'animate-bounce' :
                                             isWaving ? 'animate-wave' :
                                                 isShaking ? 'animate-shake' : ''
-                        }`}>
-                        <span className={`inline-block ${isCrying ? 'animate-cry' :
-                                isExploding ? 'animate-explode' :
-                                    isSpinning ? 'animate-spin' :
-                                        isJumping ? 'animate-jump' :
-                                            isBouncing ? 'animate-bounce' :
-                                                isWaving ? 'animate-wave' :
-                                                    isShaking ? 'animate-shake' : ''
                             }`}>さ</span>
                         <span className={`inline-block ${isExploding ? 'animate-explode' :
-                                isSpinning ? 'animate-spin' :
-                                    isJumping ? 'animate-jump' :
-                                        isBouncing ? 'animate-bounce' :
-                                            isWaving ? 'animate-wave' :
-                                                isShaking ? 'animate-shake' :
-                                                    isCrying ? 'animate-cry' : ''
-                            }`}>あ</span>
-                        <span className={`inline-block ${isSpinning ? 'animate-spin' :
+                            isSpinning ? 'animate-spin' :
                                 isJumping ? 'animate-jump' :
                                     isBouncing ? 'animate-bounce' :
                                         isWaving ? 'animate-wave' :
                                             isShaking ? 'animate-shake' :
-                                                isCrying ? 'animate-cry' :
-                                                    isExploding ? 'animate-explode' : ''
+                                                isCrying ? 'animate-cry' : ''
+                            }`}>あ</span>
+                        <span className={`inline-block ${isSpinning ? 'animate-spin' :
+                            isJumping ? 'animate-jump' :
+                                isBouncing ? 'animate-bounce' :
+                                    isWaving ? 'animate-wave' :
+                                        isShaking ? 'animate-shake' :
+                                            isCrying ? 'animate-cry' :
+                                                isExploding ? 'animate-explode' : ''
                             }`}>、</span>
                         <span className={`inline-block ${isJumping ? 'animate-jump' :
-                                isBouncing ? 'animate-bounce' :
-                                    isWaving ? 'animate-wave' :
-                                        isShaking ? 'animate-shake' :
-                                            isCrying ? 'animate-cry' :
-                                                isExploding ? 'animate-explode' :
-                                                    isSpinning ? 'animate-spin' : ''
-                            }`}>あ</span>
-                        <span className={`inline-block ${isBouncing ? 'animate-bounce' :
+                            isBouncing ? 'animate-bounce' :
                                 isWaving ? 'animate-wave' :
                                     isShaking ? 'animate-shake' :
                                         isCrying ? 'animate-cry' :
                                             isExploding ? 'animate-explode' :
-                                                isSpinning ? 'animate-spin' :
-                                                    isJumping ? 'animate-jump' : ''
-                            }`}>な</span>
-                        <span className={`inline-block ${isWaving ? 'animate-wave' :
+                                                isSpinning ? 'animate-spin' : ''
+                            }`}>あ</span>
+                        <span className={`inline-block ${isBouncing ? 'animate-bounce' :
+                            isWaving ? 'animate-wave' :
                                 isShaking ? 'animate-shake' :
                                     isCrying ? 'animate-cry' :
                                         isExploding ? 'animate-explode' :
                                             isSpinning ? 'animate-spin' :
-                                                isJumping ? 'animate-jump' :
-                                                    isBouncing ? 'animate-bounce' : ''
-                            }`}>た</span>
-                        <span className={`inline-block ${isShaking ? 'animate-shake' :
+                                                isJumping ? 'animate-jump' : ''
+                            }`}>な</span>
+                        <span className={`inline-block ${isWaving ? 'animate-wave' :
+                            isShaking ? 'animate-shake' :
                                 isCrying ? 'animate-cry' :
                                     isExploding ? 'animate-explode' :
                                         isSpinning ? 'animate-spin' :
                                             isJumping ? 'animate-jump' :
-                                                isBouncing ? 'animate-bounce' :
-                                                    isWaving ? 'animate-wave' : ''
-                            }`}>の</span>
-                        <span className={`inline-block ${isCrying ? 'animate-cry' :
+                                                isBouncing ? 'animate-bounce' : ''
+                            }`}>た</span>
+                        <span className={`inline-block ${isShaking ? 'animate-shake' :
+                            isCrying ? 'animate-cry' :
                                 isExploding ? 'animate-explode' :
                                     isSpinning ? 'animate-spin' :
                                         isJumping ? 'animate-jump' :
                                             isBouncing ? 'animate-bounce' :
-                                                isWaving ? 'animate-wave' :
-                                                    isShaking ? 'animate-shake' : ''
-                            }`}>叫</span>
-                        <span className={`inline-block ${isExploding ? 'animate-explode' :
+                                                isWaving ? 'animate-wave' : ''
+                            }`}>の</span>
+                        <span className={`inline-block ${isCrying ? 'animate-cry' :
+                            isExploding ? 'animate-explode' :
                                 isSpinning ? 'animate-spin' :
                                     isJumping ? 'animate-jump' :
                                         isBouncing ? 'animate-bounce' :
                                             isWaving ? 'animate-wave' :
-                                                isShaking ? 'animate-shake' :
-                                                    isCrying ? 'animate-cry' : ''
-                            }`}>び</span>
-                        <span className={`inline-block ${isSpinning ? 'animate-spin' :
+                                                isShaking ? 'animate-shake' : ''
+                            }`}>叫</span>
+                        <span className={`inline-block ${isExploding ? 'animate-explode' :
+                            isSpinning ? 'animate-spin' :
                                 isJumping ? 'animate-jump' :
                                     isBouncing ? 'animate-bounce' :
                                         isWaving ? 'animate-wave' :
                                             isShaking ? 'animate-shake' :
-                                                isCrying ? 'animate-cry' :
-                                                    isExploding ? 'animate-explode' : ''
-                            }`}>を</span>
-                        <span className={`inline-block ${isJumping ? 'animate-jump' :
+                                                isCrying ? 'animate-cry' : ''
+                            }`}>び</span>
+                        <span className={`inline-block ${isSpinning ? 'animate-spin' :
+                            isJumping ? 'animate-jump' :
                                 isBouncing ? 'animate-bounce' :
                                     isWaving ? 'animate-wave' :
                                         isShaking ? 'animate-shake' :
                                             isCrying ? 'animate-cry' :
-                                                isExploding ? 'animate-explode' :
-                                                    isSpinning ? 'animate-spin' : ''
-                            }`}>聞</span>
-                        <span className={`inline-block ${isBouncing ? 'animate-bounce' :
+                                                isExploding ? 'animate-explode' : ''
+                            }`}>を</span>
+                        <span className={`inline-block ${isJumping ? 'animate-jump' :
+                            isBouncing ? 'animate-bounce' :
                                 isWaving ? 'animate-wave' :
                                     isShaking ? 'animate-shake' :
                                         isCrying ? 'animate-cry' :
                                             isExploding ? 'animate-explode' :
-                                                isSpinning ? 'animate-spin' :
-                                                    isJumping ? 'animate-jump' : ''
-                            }`}>か</span>
-                        <span className={`inline-block ${isWaving ? 'animate-wave' :
+                                                isSpinning ? 'animate-spin' : ''
+                            }`}>聞</span>
+                        <span className={`inline-block ${isBouncing ? 'animate-bounce' :
+                            isWaving ? 'animate-wave' :
                                 isShaking ? 'animate-shake' :
                                     isCrying ? 'animate-cry' :
                                         isExploding ? 'animate-explode' :
                                             isSpinning ? 'animate-spin' :
-                                                isJumping ? 'animate-jump' :
-                                                    isBouncing ? 'animate-bounce' : ''
-                            }`}>せ</span>
-                        <span className={`inline-block ${isShaking ? 'animate-shake' :
+                                                isJumping ? 'animate-jump' : ''
+                            }`}>か</span>
+                        <span className={`inline-block ${isWaving ? 'animate-wave' :
+                            isShaking ? 'animate-shake' :
                                 isCrying ? 'animate-cry' :
                                     isExploding ? 'animate-explode' :
                                         isSpinning ? 'animate-spin' :
                                             isJumping ? 'animate-jump' :
-                                                isBouncing ? 'animate-bounce' :
-                                                    isWaving ? 'animate-wave' : ''
-                            }`}>て</span>
-                        <span className={`inline-block ${isCrying ? 'animate-cry' :
+                                                isBouncing ? 'animate-bounce' : ''
+                            }`}>せ</span>
+                        <span className={`inline-block ${isShaking ? 'animate-shake' :
+                            isCrying ? 'animate-cry' :
                                 isExploding ? 'animate-explode' :
                                     isSpinning ? 'animate-spin' :
                                         isJumping ? 'animate-jump' :
                                             isBouncing ? 'animate-bounce' :
-                                                isWaving ? 'animate-wave' :
-                                                    isShaking ? 'animate-shake' : ''
+                                                isWaving ? 'animate-wave' : ''
+                            }`}>て</span>
+                        <span className={`inline-block ${isCrying ? 'animate-cry' :
+                            isExploding ? 'animate-explode' :
+                                isSpinning ? 'animate-spin' :
+                                    isJumping ? 'animate-jump' :
+                                        isBouncing ? 'animate-bounce' :
+                                            isWaving ? 'animate-wave' :
+                                                isShaking ? 'animate-shake' : ''
                             }`}>！</span>
                     </h2>
                     <p className={`mb-12 text-xl text-white opacity-90 ${isBouncing ? 'animate-bounce' :
-                            isWaving ? 'animate-wave' :
-                                isShaking ? 'animate-shake' :
-                                    isSpinning ? 'animate-spin' :
-                                        isExploding ? 'animate-explode' :
-                                            isCrying ? 'animate-cry' :
-                                                isJumping ? 'animate-jump' : ''
+                        isWaving ? 'animate-wave' :
+                            isShaking ? 'animate-shake' :
+                                isSpinning ? 'animate-spin' :
+                                    isExploding ? 'animate-explode' :
+                                        isCrying ? 'animate-cry' :
+                                            isJumping ? 'animate-jump' : ''
                         }`}>
                         心の奥底に眠る感情を、カラフルで楽しい文字で表現してみませんか？
                     </p>
                     <button
                         className={`hover:shadow-3xl transform rounded-full border-4 border-pink-300 bg-white px-12 py-6 text-2xl font-bold text-pink-600 shadow-2xl transition-all duration-300 hover:scale-105 ${isJumping ? 'animate-jump' :
-                                isBouncing ? 'animate-bounce' :
-                                    isWaving ? 'animate-wave' :
-                                        isShaking ? 'animate-shake' :
-                                            isSpinning ? 'animate-spin' :
-                                                isExploding ? 'animate-explode' :
-                                                    isCrying ? 'animate-cry' : ''
+                            isBouncing ? 'animate-bounce' :
+                                isWaving ? 'animate-wave' :
+                                    isShaking ? 'animate-shake' :
+                                        isSpinning ? 'animate-spin' :
+                                            isExploding ? 'animate-explode' :
+                                                isCrying ? 'animate-cry' : ''
                             }`}
                         onClick={() => window.location.href = '/top'}
                     >
                         <span className={`inline-block ${isShaking ? 'animate-shake' :
-                                isSpinning ? 'animate-spin' :
-                                    isWaving ? 'animate-wave' :
-                                        isExploding ? 'animate-explode' :
-                                            isCrying ? 'animate-cry' :
-                                                isJumping ? 'animate-jump' :
-                                                    isBouncing ? 'animate-bounce' : ''
+                            isSpinning ? 'animate-spin' :
+                                isWaving ? 'animate-wave' :
+                                    isExploding ? 'animate-explode' :
+                                        isCrying ? 'animate-cry' :
+                                            isJumping ? 'animate-jump' :
+                                                isBouncing ? 'animate-bounce' : ''
                             }`}>
                             🚀
                         </span>
