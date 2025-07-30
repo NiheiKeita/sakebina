@@ -334,95 +334,104 @@ export default function SakebinaTop() {
                                     required
                                 />
                             </div>
-                            <div className="mb-4 flex flex-wrap gap-2">
-                                {chars.map((c, i) => (
-                                    <span
-                                        key={i}
-                                        style={{
-                                            color: c.color,
-                                            border: selectedIndex === i ? '3px solid #333' : '2px solid #ccc',
-                                            borderRadius: '8px',
-                                            padding: '0.3em 0.5em',
-                                            cursor: 'pointer',
-                                            background: selectedIndex === i ? '#f0f0f0' : 'transparent',
-                                            fontSize: '1.5rem',
-                                            marginRight: '2px',
-                                            display: 'inline-block',
-                                            fontWeight: 'bold',
-                                            textShadow: '1px 1px 2px rgba(0,0,0,0.3), 0 0 5px rgba(255,255,255,0.3)',
-                                            filter: 'drop-shadow(1px 1px 2px rgba(0,0,0,0.2))',
-                                            animation:
-                                                c.animation === 'shake'
-                                                    ? 'shake 0.5s infinite'
-                                                    : c.animation === 'shake2'
-                                                        ? 'shake2 0.25s infinite'
-                                                        : c.animation === 'explode'
-                                                            ? 'explode 1s infinite'
-                                                            : c.animation === 'wind'
-                                                                ? 'wind 1s infinite'
-                                                                : c.animation === 'fade'
-                                                                    ? 'fade 2s infinite'
-                                                                    : c.animation === 'yell'
-                                                                        ? 'yell 0.7s infinite'
-                                                                        : c.animation === 'cry'
-                                                                            ? 'cry 1.2s infinite'
-                                                                            : c.animation === 'fold'
-                                                                                ? 'fold 1.2s infinite'
-                                                                                : c.animation === 'jump'
-                                                                                    ? 'jump 0.7s infinite'
-                                                                                    : c.animation === 'bigYell'
-                                                                                        ? 'bigYell 0.8s infinite'
-                                                                                        : c.animation === 'tilt'
-                                                                                            ? 'tilt 1.2s infinite'
-                                                                                            : c.animation === 'spin'
-                                                                                                ? 'spin 1.2s infinite linear'
-                                                                                                : c.animation === 'bounce'
-                                                                                                    ? 'bounce 0.8s infinite'
-                                                                                                    : c.animation === 'wave'
-                                                                                                        ? 'wave 1.2s infinite'
-                                                                                                        : c.animation === 'wiggle'
-                                                                                                            ? 'wiggle 1.2s infinite'
-                                                                                                            : c.animation === 'float'
-                                                                                                                ? 'float 2s infinite'
-                                                                                                                : c.animation === 'scale'
-                                                                                                                    ? 'scale 1.5s infinite'
-                                                                                                                    : 'none',
-                                        }}
-                                        onClick={() => setSelectedIndex(i)}
-                                    >
-                                        {c.char}
-                                    </span>
-                                ))}
+                            <div className="mb-4">
+                                <div className="mb-2 text-sm font-bold text-gray-700">
+                                    💡 文字をクリックして色やアニメーションを設定できます
+                                </div>
+                                <div className="flex flex-wrap gap-2">
+                                    {chars.map((c, i) => (
+                                        <span
+                                            key={i}
+                                            style={{
+                                                color: c.color,
+                                                border: selectedIndex === i ? '3px solid #ff6b6b' : '2px solid #ddd',
+                                                borderRadius: '12px',
+                                                padding: '0.4em 0.6em',
+                                                cursor: 'pointer',
+                                                background: selectedIndex === i
+                                                    ? 'linear-gradient(135deg, #fff5f5, #ffe8e8)'
+                                                    : 'linear-gradient(135deg, #f8f9fa, #e9ecef)',
+                                                fontSize: '1.5rem',
+                                                marginRight: '2px',
+                                                display: 'inline-block',
+                                                fontWeight: 'bold',
+                                                textShadow: '1px 1px 2px rgba(0,0,0,0.3), 0 0 5px rgba(255,255,255,0.3)',
+                                                filter: 'drop-shadow(1px 1px 2px rgba(0,0,0,0.2))',
+                                                transition: 'all 0.2s ease-in-out',
+                                                transform: selectedIndex === i ? 'scale(1.05)' : 'scale(1)',
+                                                boxShadow: selectedIndex === i
+                                                    ? '0 4px 12px rgba(255, 107, 107, 0.3)'
+                                                    : '0 2px 4px rgba(0,0,0,0.1)',
+                                                // 入力直下の文字選択エリアではアニメーションを無効
+                                                animation: 'none',
+                                            }}
+                                            onClick={() => setSelectedIndex(i)}
+                                            onMouseEnter={(e) => {
+                                                if (selectedIndex !== i) {
+                                                    e.currentTarget.style.transform = 'scale(1.02)'
+                                                    e.currentTarget.style.boxShadow = '0 3px 8px rgba(0,0,0,0.2)'
+                                                }
+                                            }}
+                                            onMouseLeave={(e) => {
+                                                if (selectedIndex !== i) {
+                                                    e.currentTarget.style.transform = 'scale(1)'
+                                                    e.currentTarget.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)'
+                                                }
+                                            }}
+                                        >
+                                            {c.char}
+                                        </span>
+                                    ))}
+                                </div>
                             </div>
                             {selectedIndex !== null && chars[selectedIndex] && (
-                                <div className="mb-4 flex items-center gap-3">
-                                    <span className="font-bold text-gray-700">色:</span>
-                                    <select
-                                        value={chars[selectedIndex].color}
-                                        onChange={e => updateChar(selectedIndex, 'color', e.target.value)}
-                                        className="rounded-lg border-2 border-pink-200 px-3 py-2 focus:border-pink-400 focus:outline-none"
-                                    >
-                                        {COLORS.map(opt => <option key={opt.value} value={opt.value}>{opt.label}</option>)}
-                                    </select>
-                                    <span className="font-bold text-gray-700">アニメ:</span>
-                                    <select
-                                        value={chars[selectedIndex].animation}
-                                        onChange={e => updateChar(selectedIndex, 'animation', e.target.value)}
-                                        className="rounded-lg border-2 border-pink-200 px-3 py-2 focus:border-pink-400 focus:outline-none"
-                                    >
-                                        {ANIMATIONS.map(opt => <option key={opt.value} value={opt.value}>{opt.label}</option>)}
-                                    </select>
-                                    <button type="button" className="ml-2 text-sm text-gray-500 hover:text-gray-700" onClick={() => setSelectedIndex(null)}>閉じる</button>
+                                <div className="mb-4 rounded-lg border-2 border-pink-200 bg-gradient-to-br from-pink-50 to-yellow-50 p-4">
+                                    <div className="mb-3 flex items-center justify-between">
+                                        <div className="flex items-center gap-2">
+                                            <span className="text-lg">🎨</span>
+                                            <span className="font-bold text-gray-700">文字の設定</span>
+                                        </div>
+                                        <button
+                                            type="button"
+                                            className="rounded-full bg-gray-200 px-2 py-1 text-sm text-gray-600 hover:bg-gray-300 focus:outline-none"
+                                            onClick={() => setSelectedIndex(null)}
+                                        >
+                                            ✕
+                                        </button>
+                                    </div>
+                                    <div className="flex flex-wrap items-center gap-3">
+                                        <div className="flex items-center gap-2">
+                                            <span className="font-bold text-gray-700">色:</span>
+                                            <select
+                                                value={chars[selectedIndex].color}
+                                                onChange={e => updateChar(selectedIndex, 'color', e.target.value)}
+                                                className="rounded-lg border-2 border-pink-200 px-3 py-2 focus:border-pink-400 focus:outline-none"
+                                            >
+                                                {COLORS.map(opt => <option key={opt.value} value={opt.value}>{opt.label}</option>)}
+                                            </select>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <span className="font-bold text-gray-700">アニメ:</span>
+                                            <select
+                                                value={chars[selectedIndex].animation}
+                                                onChange={e => updateChar(selectedIndex, 'animation', e.target.value)}
+                                                className="rounded-lg border-2 border-pink-200 px-3 py-2 focus:border-pink-400 focus:outline-none"
+                                            >
+                                                {ANIMATIONS.map(opt => <option key={opt.value} value={opt.value}>{opt.label}</option>)}
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
                             )}
                             <div className="mb-4">
                                 <label className="inline-flex items-center">
                                     <input type="checkbox" checked={preview} onChange={e => setPreview(e.target.checked)} className="mr-2" />
-                                    <span className="font-bold text-gray-700">リアルタイムプレビュー</span>
+                                    <span className="font-bold text-gray-700">✨ リアルタイムプレビュー</span>
                                 </label>
                             </div>
                             {preview && (
                                 <div className="mb-4 min-h-[4rem] rounded-2xl border-2 border-pink-200 bg-gradient-to-br from-white via-yellow-50 to-pink-100 p-4 text-center shadow-lg transition-all duration-300">
+                                    <div className="mb-2 text-sm font-bold text-gray-600">👀 プレビュー</div>
                                     {chars.length === 0 ? (
                                         <span className="text-gray-400">ここに叫びが表示されます</span>
                                     ) : (
