@@ -444,12 +444,12 @@ export default function LandingPage() {
                                 <div className="absolute -bottom-6 right-6 animate-bounce text-3xl opacity-30">⚡️</div>
                                 <div className="absolute left-0 top-1/2 animate-pulse text-3xl opacity-30" style={{ transform: 'translateY(-50%)' }}>❤️</div>
                                 <div className="absolute left-1/4 top-0 animate-bounce text-2xl opacity-30">💦</div>
-                                <div className="absolute right-1/4 bottom-0 animate-spin text-3xl opacity-20">🌀</div>
-                                <div className="absolute left-10 top-10 animate-wiggle text-2xl opacity-40">💀</div>
-                                <div className="absolute right-10 top-1/3 animate-float text-3xl opacity-30">☁️</div>
-                                <div className="absolute left-1/2 top-1/4 animate-scale text-2xl opacity-30">🎶</div>
-                                <div className="absolute right-1/2 bottom-1/4 animate-fade text-3xl opacity-20">✨</div>
-                                <div className="absolute left-12 bottom-2 animate-bounce text-2xl opacity-30">💖</div>
+                                <div className="absolute bottom-0 right-1/4 animate-spin text-3xl opacity-20">🌀</div>
+                                <div className="animate-wiggle absolute left-10 top-10 text-2xl opacity-40">💀</div>
+                                <div className="animate-float absolute right-10 top-1/3 text-3xl opacity-30">☁️</div>
+                                <div className="animate-scale absolute left-1/2 top-1/4 text-2xl opacity-30">🎶</div>
+                                <div className="animate-fade absolute bottom-1/4 right-1/2 text-3xl opacity-20">✨</div>
+                                <div className="absolute bottom-2 left-12 animate-bounce text-2xl opacity-30">💖</div>
                                 <div className="absolute right-12 top-8 animate-spin text-2xl opacity-20">🌟</div>
                                 {/* サンプル叫び本体 */}
                                 <div className="animate-pulse-glow relative z-10 rounded-2xl border-4 border-pink-200 bg-gradient-to-br from-white via-yellow-50 to-pink-100 p-6 shadow-xl">
@@ -468,11 +468,11 @@ export default function LandingPage() {
                                 <div className="absolute bottom-0 left-1/2 animate-pulse text-4xl opacity-30" style={{ transform: 'translateX(-50%)' }}>💫</div>
                                 <div className="absolute -bottom-6 left-6 animate-bounce text-3xl opacity-30">✨</div>
                                 <div className="absolute right-0 top-1/2 animate-pulse text-3xl opacity-30" style={{ transform: 'translateY(-50%)' }}>🔥</div>
-                                <div className="absolute left-1/4 bottom-0 animate-float text-2xl opacity-30">☁️</div>
-                                <div className="absolute right-1/4 top-0 animate-wiggle text-3xl opacity-20">💀</div>
-                                <div className="absolute left-10 bottom-10 animate-scale text-2xl opacity-40">💖</div>
-                                <div className="absolute right-10 bottom-1/3 animate-fade text-3xl opacity-30">✨</div>
-                                <div className="absolute left-1/2 bottom-1/4 animate-bounce text-2xl opacity-30">🎶</div>
+                                <div className="animate-float absolute bottom-0 left-1/4 text-2xl opacity-30">☁️</div>
+                                <div className="animate-wiggle absolute right-1/4 top-0 text-3xl opacity-20">💀</div>
+                                <div className="animate-scale absolute bottom-10 left-10 text-2xl opacity-40">💖</div>
+                                <div className="animate-fade absolute bottom-1/3 right-10 text-3xl opacity-30">✨</div>
+                                <div className="absolute bottom-1/4 left-1/2 animate-bounce text-2xl opacity-30">🎶</div>
                                 <div className="absolute right-1/2 top-1/4 animate-spin text-3xl opacity-20">🌟</div>
                                 {/* サンプル叫び本体 */}
                                 <div className="animate-pulse-glow relative z-10 rounded-2xl border-4 border-blue-200 bg-gradient-to-br from-white via-blue-50 to-purple-100 p-6 shadow-xl">

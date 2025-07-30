@@ -17,7 +17,7 @@ const preview: Preview = {
     loaders: [mswLoader],
     decorators: [
         (Story: any) => {
-            // Inertia.jsのモック設定
+            // Inertia.jsの完全なモック設定
             ; (window as any).Inertia = {
                 visit: () => { },
                 get: () => { },
@@ -26,7 +26,15 @@ const preview: Preview = {
                 patch: () => { },
                 delete: () => { },
                 reload: () => { },
+                createProvider: () => ({ children }: any) => children,
+                Head: ({ children }: any) => children,
             }
+
+                // axiosのモック設定
+                ; (window as any).axios = {
+                    get: () => Promise.resolve({ data: { data: [] } }),
+                    post: () => Promise.resolve({ data: {} }),
+                }
 
             return React.createElement(Story)
         }
