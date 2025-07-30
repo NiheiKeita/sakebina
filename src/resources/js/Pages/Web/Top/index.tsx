@@ -3,17 +3,7 @@ import React, { useEffect, useState } from 'react'
 import WebLayout from '@/Layouts/WebLayout'
 import axios from 'axios'
 
-// 色・アニメーションの選択肢
-const COLORS = [
-    { value: '#f00', label: '赤' },
-    { value: '#00f', label: '青' },
-    { value: '#0c0', label: '緑' },
-    { value: '#000', label: '黒' },
-    { value: '#fff', label: '白' },
-    { value: '#ff0', label: '黄' },
-    { value: '#f0f', label: 'ピンク' },
-    { value: '#0ff', label: '水' },
-]
+// アニメーションの選択肢
 const ANIMATIONS = [
     { value: 'none', label: 'なし' },
     { value: 'shake', label: '震える' },
@@ -402,13 +392,16 @@ export default function SakebinaTop() {
                                     <div className="flex flex-wrap items-center gap-3">
                                         <div className="flex items-center gap-2">
                                             <span className="font-bold text-gray-700">色:</span>
-                                            <select
-                                                value={chars[selectedIndex].color}
-                                                onChange={e => updateChar(selectedIndex, 'color', e.target.value)}
-                                                className="rounded-lg border-2 border-pink-200 px-3 py-2 focus:border-pink-400 focus:outline-none"
-                                            >
-                                                {COLORS.map(opt => <option key={opt.value} value={opt.value}>{opt.label}</option>)}
-                                            </select>
+                                            <div className="flex items-center gap-2">
+                                                <input
+                                                    type="color"
+                                                    value={chars[selectedIndex].color}
+                                                    onChange={e => updateChar(selectedIndex, 'color', e.target.value)}
+                                                    className="h-10 w-16 cursor-pointer rounded-lg border-2 border-pink-200 focus:border-pink-400 focus:outline-none"
+                                                    title="色を選択"
+                                                />
+                                                <span className="font-mono text-sm text-gray-600">{chars[selectedIndex].color}</span>
+                                            </div>
                                         </div>
                                         <div className="flex items-center gap-2">
                                             <span className="font-bold text-gray-700">アニメ:</span>
