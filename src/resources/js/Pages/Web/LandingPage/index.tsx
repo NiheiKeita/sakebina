@@ -434,73 +434,34 @@ export default function LandingPage() {
                             </ul>
                         </div>
 
-                        <div className="rounded-2xl bg-white p-8 shadow-xl">
-                            <h4 className={`mb-4 text-center text-xl font-bold ${isJumping ? 'animate-jump' :
-                                isBouncing ? 'animate-bounce' :
-                                    isWaving ? 'animate-wave' :
-                                        isShaking ? 'animate-shake' :
-                                            isSpinning ? 'animate-spin' :
-                                                isExploding ? 'animate-explode' :
-                                                    isCrying ? 'animate-cry' : ''
-                                }`}>
-                                <span className={`inline-block ${isJumping ? 'animate-jump' :
-                                    isBouncing ? 'animate-bounce' :
-                                        isWaving ? 'animate-wave' :
-                                            isShaking ? 'animate-shake' :
-                                                isSpinning ? 'animate-spin' :
-                                                    isExploding ? 'animate-explode' :
-                                                        isCrying ? 'animate-cry' : ''
-                                    }`}>サ</span>
-                                <span className={`inline-block ${isBouncing ? 'animate-bounce' :
-                                    isWaving ? 'animate-wave' :
-                                        isShaking ? 'animate-shake' :
-                                            isSpinning ? 'animate-spin' :
-                                                isJumping ? 'animate-jump' :
-                                                    isExploding ? 'animate-explode' :
-                                                        isCrying ? 'animate-cry' : ''
-                                    }`}>ン</span>
-                                <span className={`inline-block ${isWaving ? 'animate-wave' :
-                                    isShaking ? 'animate-shake' :
-                                        isSpinning ? 'animate-spin' :
-                                            isBouncing ? 'animate-bounce' :
-                                                isJumping ? 'animate-jump' :
-                                                    isExploding ? 'animate-explode' :
-                                                        isCrying ? 'animate-cry' : ''
-                                    }`}>プ</span>
-                                <span className={`inline-block ${isShaking ? 'animate-shake' :
-                                    isSpinning ? 'animate-spin' :
-                                        isBouncing ? 'animate-bounce' :
-                                            isWaving ? 'animate-wave' :
-                                                isJumping ? 'animate-jump' :
-                                                    isExploding ? 'animate-explode' :
-                                                        isCrying ? 'animate-cry' : ''
-                                    }`}>ル</span>
-                                <span className={`inline-block ${isSpinning ? 'animate-spin' :
-                                    isBouncing ? 'animate-bounce' :
-                                        isWaving ? 'animate-wave' :
-                                            isShaking ? 'animate-shake' :
-                                                isJumping ? 'animate-jump' :
-                                                    isExploding ? 'animate-explode' :
-                                                        isCrying ? 'animate-cry' : ''
-                                    }`}>叫</span>
-                                <span className={`inline-block ${isBouncing ? 'animate-bounce' :
-                                    isWaving ? 'animate-wave' :
-                                        isShaking ? 'animate-shake' :
-                                            isSpinning ? 'animate-spin' :
-                                                isJumping ? 'animate-jump' :
-                                                    isExploding ? 'animate-explode' :
-                                                        isCrying ? 'animate-cry' : ''
-                                    }`}>び</span>
-                            </h4>
-                            <div className="space-y-4">
-                                <div className="rounded-lg bg-gray-100 p-4 text-center">
+                        <div className="space-y-8">
+                            {/* サンプル叫び1 */}
+                            <div className="relative my-8">
+                                {/* 背景装飾 */}
+                                <div className="absolute -left-6 -top-6 h-12 w-12 animate-bounce rounded-full bg-gradient-to-br from-pink-300 to-yellow-300 opacity-30"></div>
+                                <div className="absolute right-2 top-2 animate-spin text-3xl opacity-40">⭐️</div>
+                                <div className="absolute bottom-0 left-1/2 animate-pulse text-4xl opacity-30" style={{ transform: 'translateX(-50%)' }}>💥</div>
+                                <div className="absolute -bottom-6 right-6 animate-bounce text-3xl opacity-30">⚡️</div>
+                                <div className="absolute left-0 top-1/2 animate-pulse text-3xl opacity-30" style={{ transform: 'translateY(-50%)' }}>❤️</div>
+                                {/* サンプル叫び本体 */}
+                                <div className="animate-pulse-glow relative z-10 rounded-2xl border-4 border-pink-200 bg-gradient-to-br from-white via-yellow-50 to-pink-100 p-6 shadow-xl">
                                     <span style={{ color: '#ff0000', fontSize: '2.5rem', fontWeight: 'bold', animation: 'yell 0.7s infinite' }}>や</span>
                                     <span style={{ color: '#ff6600', fontSize: '2.2rem', fontWeight: 'bold', animation: 'explode 1s infinite', display: 'inline-block', transform: 'rotate(-8deg)' }}>っ</span>
                                     <span style={{ color: '#00bfff', fontSize: '2.2rem', fontWeight: 'bold', animation: 'jump 0.7s infinite', display: 'inline-block', transform: 'rotate(8deg)' }}>た</span>
                                     <span style={{ color: '#00ff00', fontSize: '2.2rem', fontWeight: 'bold', animation: 'wave 1.2s infinite', display: 'inline-block', transform: 'skewY(-8deg)' }}>ー</span>
                                     <span style={{ color: '#ff00ff', fontSize: '3rem', fontWeight: 'bold', animation: 'bigYell 0.8s infinite', display: 'inline-block', transform: 'rotate(-10deg) scale(1.3)' }}>！</span>
                                 </div>
-                                <div className="rounded-lg bg-gray-100 p-4 text-center">
+                            </div>
+                            {/* サンプル叫び2 */}
+                            <div className="relative my-8">
+                                {/* 背景装飾 */}
+                                <div className="absolute -top-6 right-0 h-12 w-12 animate-bounce rounded-full bg-gradient-to-br from-blue-300 to-purple-300 opacity-30"></div>
+                                <div className="absolute left-2 top-2 animate-spin text-3xl opacity-40">🌈</div>
+                                <div className="absolute bottom-0 left-1/2 animate-pulse text-4xl opacity-30" style={{ transform: 'translateX(-50%)' }}>💫</div>
+                                <div className="absolute -bottom-6 left-6 animate-bounce text-3xl opacity-30">✨</div>
+                                <div className="absolute right-0 top-1/2 animate-pulse text-3xl opacity-30" style={{ transform: 'translateY(-50%)' }}>🔥</div>
+                                {/* サンプル叫び本体 */}
+                                <div className="animate-pulse-glow relative z-10 rounded-2xl border-4 border-blue-200 bg-gradient-to-br from-white via-blue-50 to-purple-100 p-6 shadow-xl">
                                     <span style={{ color: '#ff6600', fontSize: '2.3rem', fontWeight: 'bold', animation: 'yell 0.7s infinite', display: 'inline-block', transform: 'rotate(-8deg)' }}>つ</span>
                                     <span style={{ color: '#6600ff', fontSize: '2.1rem', fontWeight: 'bold', animation: 'wave 1.2s infinite', display: 'inline-block', transform: 'skewY(8deg)' }}>か</span>
                                     <span style={{ color: '#00ff66', fontSize: '2.2rem', fontWeight: 'bold', animation: 'tilt 1.2s infinite', display: 'inline-block', transform: 'rotate(8deg)' }}>れ</span>
